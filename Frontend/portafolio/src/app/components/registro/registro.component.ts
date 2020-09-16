@@ -53,9 +53,15 @@ hasNum: boolean = true;
       return;
     }
 
-    this.service.agregarUsuario(this.usuario).subscribe(_ => {alert("Registro exitoso"); this.router.navigate(['']);},
-    error => {alert("Este correo ya se encuentra en uso")}
-    );
+    if(this.service.agregarUsuario(this.usuario).subscribe()){
+        alert("Registro exitoso"); 
+        this.router.navigate(['']);
+    }else{
+      alert("Este correo ya se encuentra en uso")
+    }
+    
+
+    
 
   }
 }

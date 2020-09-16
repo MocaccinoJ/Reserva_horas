@@ -7,4 +7,3 @@ public class SinConexionException extends Exception {
         super (e);
     }
 }
-//hola

@@ -18,15 +18,15 @@
   <form>
     <mat-form-field appearance="outline" style="width: 100%">
       <mat-label class="label">Correo</mat-label>
-      <input matInput type="email"#email required placeholder="ejemplo@email.com"/>
+      <input matInput type="email"#correo required placeholder="ejemplo@email.com"/>
     </mat-form-field>
     <mat-form-field appearance="outline" style="width: 100%">
       <mat-label class="label">Contraseña</mat-label>
-      <input matInput type="password" required placeholder="contraseña" pattern="([a-z])(?=.*[A-Z]).{4,}"
+      <input matInput type="password" #contrasenha required placeholder="contraseña" pattern="([a-z])(?=.*[A-Z]).{4,}"
       title="Debe contener al menos un número, una letra mayúscula o minúscula. 4 caracteres mínimo."/>
     </mat-form-field>
     <a aria-label="Inicio de sesion" title="Inicio de sesion" routerLink="/usuario" style="margin-left: 1em">
-      <button class="btn btn-outline-primary my-2 my-sm-0"> Iniciar Sesion</button>
+      <button class="btn btn-outline-primary my-2 my-sm-0" (click) = "loginUsuario(correo.value, contrasenha.value)"> Iniciar Sesion</button>
     </a>
     <button class="btn btn-outline-primary" style="margin-left: 1em">Limpiar datos</button>
     <a aria-label="Administrador" title="Inicio de sesion" routerLink="/sesion" style="margin-left: 27em">

@@ -31,5 +31,8 @@ export class UsuarioService {
   actualizarUsuario(usuario: Usuario, correo: String): Observable<Usuario>{
     return this.http.put<Usuario>(`${this.usuarioURL}update/${correo}`, usuario, this.httpOptions);
   }
+  loginUsuario(usuario: Usuario) {
+    return this.http.post<Usuario>(this.usuarioURL+"login/", usuario, this.httpOptions)
+  }
 
 }

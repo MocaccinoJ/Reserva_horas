@@ -111,7 +111,6 @@ public class UsuariosDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        //HOLA
         return null;
     }
 }
