@@ -1,0 +1,44 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 30%;
+    float: left;
+    justify-content: space-between;
+    padding: 30px;
+    margin: 2em 2em 2em 2em;
+  }
+  
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+.container {
+    padding: 2px 50px;
+  }
+img {
+    display: flex;
+    margin-left: 2em;
+    border-radius: 5px 5px 0 0;
+  }
+h2{
+    text-align: center;
+}
+h4{
+    text-align: center;
+    text-align: justify;
+}
+h5{
+  text-align: center;
+  color: dodgerblue;
+}
+p{
+    text-align: center;
+    text-align: justify;
+}
+h2{
+    color: dodgerblue;
+}
+h4{
+    color: lightsteelblue;
+    text-align: center;
+}
+

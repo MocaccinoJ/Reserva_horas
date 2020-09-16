@@ -1,0 +1,32 @@
+h2{
+    text-align: center;
+    color: cornflowerblue;
+}
+table{
+    width: 100%;
+    box-shadow: 2px 2px 5px #999;
+}
+.nombre{
+    color: black;
+    font-size: 15px;
+
+}
+.correo{
+    color: black;
+    font-size: 15px;
+}
+.fecha{
+    color: black;
+    font-size: 15px;
+}
+.hora{
+    color: black;
+    font-size: 15px;
+}
+.confirmar{
+    color: black;
+    font-size: 15px;
+}
+mat-grid-tile {
+    background: lightcyan;
+  }

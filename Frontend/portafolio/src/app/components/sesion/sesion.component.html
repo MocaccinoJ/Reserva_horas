@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img
+      width="250"
+      height="60"
+      alt="Logo Portafolio"
+      src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"
+  /></a>
+  <span class="example-spacer"></span>
+  <a style="margin-left: 74%">
+    <button aria-label="Reserva tu hora" title="Reserva tu hora" routerLink="/registro" class="btn btn-outline-primary my-2 my-sm-0">
+      Registrate
+    </button>
+  </a>
+</nav>
+<div style="margin: 5em auto; padding: 2em; width: 50%" class="mat-elevation-z8 sesion">
+  <h3>Inicia Sesión</h3>
+  <form>
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label class="label">Correo</mat-label>
+      <input matInput type="email"#email required placeholder="ejemplo@email.com"/>
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label class="label">Contraseña</mat-label>
+      <input matInput type="password" required placeholder="contraseña" pattern="([a-z])(?=.*[A-Z]).{4,}"
+      title="Debe contener al menos un número, una letra mayúscula o minúscula. 4 caracteres mínimo."/>
+    </mat-form-field>
+    <a aria-label="Inicio de sesion" title="Inicio de sesion" routerLink="/usuario" style="margin-left: 1em">
+      <button class="btn btn-outline-primary my-2 my-sm-0"> Iniciar Sesion</button>
+    </a>
+    <button class="btn btn-outline-primary" style="margin-left: 1em">Limpiar datos</button>
+    <a aria-label="Administrador" title="Inicio de sesion" routerLink="/sesion" style="margin-left: 27em">
+      <button class="btn btn-outline-primary my-2 my-sm-0"> Administrador</button>
+    </a>
+  </form>
+</div>
