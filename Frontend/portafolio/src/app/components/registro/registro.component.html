@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img width="250" height="60" alt="Logo Portafolio" src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"
+    /></a>
+    <span class="example-spacer"></span>
+    <a style="margin-left: 74%">
+      <button aria-label="Reserva tu hora" title="Reserva tu hora" routerLink="/sesion" class="btn btn-outline-primary my-2 my-sm-0">
+        Iniciar Sesión
+      </button>
+    </a>
+  </nav>
+  <div style="margin: 5em auto; padding: 2em; width: 50%"
+        class="mat-elevation-z8 sesion">
+
+    <h3>Registrate</h3>
+    <form>
+        <mat-form-field appearance="outline" style="width: 100%">
+            <mat-label class="label">Nombre</mat-label>
+            <input matInput type="name"/>
+          </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%">
+        <mat-label class="label">Correo</mat-label>
+        <input matInput type="email"#email required placeholder="ejemplo@email.com"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%">
+        <mat-label class="label">Contraseña</mat-label>
+        <input matInput type="password" required placeholder="contraseña" pattern="([a-z])(?=.*[A-Z]).{4,}"
+          title="Debe contener al menos un número, una letra mayúscula o minúscula. 4 caracteres mínimo."/>
+      </mat-form-field>
+      <a aria-label="registro" title="registro" routerLink="/usuario" style="margin-left: 1em">
+        <button class="btn btn-outline-primary my-2 my-sm-0" (click)='agregarUsuario()'>
+          Registrate
+        </button>
+      </a>
+      <button class="btn btn-outline-primary" style="margin-left: 1em">
+        Limpiar datos
+      </button>
+    </form>
+  </div>
+
+
+  
+<!-- <div style="margin: 2em auto; padding: 2em; width: 50%" class="mat-elevation-z8">
+  <h3>Regístrate</h3>
+  <p>Crea tu portafolio en Binder y despega tu carrera profesional</p>
+  <form>
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Nombre</mat-label>
+          <input matInput class="inputText" #nombre placeholder="Nombre completo" [(ngModel)]="usuario.nombre" name = 'nombre'>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Correo</mat-label>
+          <input matInput #email required placeholder="example@email.com" class="inputText" [(ngModel)]="usuario.correo" name = 'correo'>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" #contrasenha required class="inputText" [(ngModel)]="usuario.contrasenha" name = 'contrasenha'>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Nombre de tu portafolio</mat-label>
+          <input matInput #binder required placeholder="Ejemplo: Diseño UX/UI" class="inputText" [(ngModel)]="usuario.binder" name = 'binder'>
+          <mat-hint>Respetamos tu privacidad al no compartir tu correo con terceros</mat-hint>
+      </mat-form-field>
+      <button mat-raised-button type="button"color="primary" style="margin: 1em;" (click)="agregarUsuario(); validarDatos();" routerLink=""> Enviar</button>
+      <button mat-raised-button type="reset" color="secondary" style="margin-left: 1em;">Limpiar datos</button>
+  </form>
+</div> -->

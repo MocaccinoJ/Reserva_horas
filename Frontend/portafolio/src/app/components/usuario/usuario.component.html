@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img
+      width="250"
+      height="60"
+      alt="Logo Portafolio"
+      src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"
+  /></a>
+  <span class="example-spacer"></span>
+  <a style="margin-left: 60%">
+    <h3 style="color: rgb(67, 153, 252)">¡Bienvenido!</h3>
+  </a>
+</nav>
+<body
+  class="mat-elevation-z8 sesion text-center"
+  style="margin-top: 100px; margin-left: auto; margin-right: auto; padding: 3em; width: 50%; height: 70%"
+>
+<div class="container ">
+
+  <h1 class="text-left">Agenda tu hora para:</h1>
+  <hr>
+  <div class="form-check text-left" >
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+    <label class="form-check-label" for="exampleRadios1">
+      Venta
+    </label>
+  </div>
+
+  <div class="form-check text-left">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+    <label class="form-check-label" for="exampleRadios1">
+      Post Venta
+    </label>
+  </div>
+
+
+</div>
+<hr>
+  <div class="form-group text-left">
+    <label for="Select">Selecciona tu sucursal</label>
+    <select id="Select" class="form-control">
+      <option>Sucursal</option>
+      <option>Cruz Verde San bernardo</option>
+      <option>Cruz Verde Nuñoa</option>
+      <option>Cruz Verde Maipu</option>
+      <option>Ahumada San bernardo</option>
+      <option>Ahumada Nuñoa</option>
+      <option>Ahumada Maipu</option>
+      <option>Salcobrand San Bernardo</option>
+      <option>Salcobrand Nuñoa</option>
+      <option>Salcobrand Maipu</option>
+    </select>
+  </div>
+
+ <br>
+
+  <button
+    mat-raised-button
+    color="warn"
+    style="margin-left: 1em; margin-top: 2em"
+    routerLink="/usuario"
+  >
+    Reservar hora
+  </button>
+  <button
+    mat-raised-button
+    color="warn"
+    style="margin-left: 1em; margin-top: 2em"
+  >
+    Limpiar datos
+  </button>
+</body>
+
