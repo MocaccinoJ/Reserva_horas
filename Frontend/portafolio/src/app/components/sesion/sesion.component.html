@@ -13,24 +13,79 @@
     </button>
   </a>
 </nav>
+
+<!-- 
 <div style="margin: 5em auto; padding: 2em; width: 50%" class="mat-elevation-z8 sesion">
   <h3>Inicia Sesión</h3>
-  <form>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="outline" style="width: 100%">
       <mat-label class="label">Correo</mat-label>
-      <input matInput type="email"#correo required placeholder="ejemplo@email.com"/>
+      <input matInput type="email"#correo required placeholder="ejemplo@email.com" formControlName="username"/>
     </mat-form-field>
     <mat-form-field appearance="outline" style="width: 100%">
       <mat-label class="label">Contraseña</mat-label>
-      <input matInput type="password" #contrasenha required placeholder="contraseña" pattern="([a-z])(?=.*[A-Z]).{4,}"
+      <input matInput type="password" #contrasenha required placeholder="contraseña" formControlName="password" pattern="([a-z])(?=.*[A-Z]).{4,}"
       title="Debe contener al menos un número, una letra mayúscula o minúscula. 4 caracteres mínimo."/>
     </mat-form-field>
     <a aria-label="Inicio de sesion" title="Inicio de sesion" routerLink="/usuario" style="margin-left: 1em">
-      <button class="btn btn-outline-primary my-2 my-sm-0" (click) = "loginUsuario(correo.value, contrasenha.value)"> Iniciar Sesion</button>
+      <button class="btn btn-outline-primary my-2 my-sm-0"> Iniciar Sesion</button>
     </a>
     <button class="btn btn-outline-primary" style="margin-left: 1em">Limpiar datos</button>
     <a aria-label="Administrador" title="Inicio de sesion" routerLink="/sesion" style="margin-left: 27em">
       <button class="btn btn-outline-primary my-2 my-sm-0"> Administrador</button>
     </a>
   </form>
-</div>
+</div> -->
+
+<!-- <mat-card>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2>Log In</h2>
+      <mat-error *ngIf="loginInvalid">
+       nombre de usuario o contraseña invalidos
+      </mat-error>
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="Correo" formControlName="username" required>
+        <mat-error>
+         Por favor ingrese un correo
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <input matInput type="password" placeholder="Contraseña" formControlName="password" required>
+        <mat-error>
+          Por favor ingrese una contraseña
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary">Login</button>
+    </form>
+  </mat-card-content>
+</mat-card> -->
+
+<section class="mt-5 login-user">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 mx-auto  mb-5 formulario card">
+        <img class="text-center mx-auto mb-3" src="/assets/img/icons/login-user.png" width="30%" alt="">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <h1 class="mx-auto text-center">Iniciar Sesión</h1>
+          <div class="form-group">
+            <label for="nombreUser">Correo</label>
+            <input type="text" class="form-control" id="nombreUser" formControlName='username'
+              placeholder="Ingrese Correo" #correo>
+          </div>
+          <div class="form-group">
+            <label for="contrasenhaUser">Contraseña</label>
+            <input type="password" class="form-control" id="contrasenhaUser" #contrasena
+              placeholder="Ingrese Contraseña" formControlName='password'>
+          </div>
+
+          <button class="btn btn-lg Btn-login  btn-block" value="Acceder">Iniciar Sesión</button>
+          <div class="form-group text-center mt-5">
+            <p>¿No tienes una cuenta? Registrate <a routerLink="/registro">aquí</a></p>
+            <p>Recupera tu contraseña <a routerLink="/recuperarContrasena"> aquí</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

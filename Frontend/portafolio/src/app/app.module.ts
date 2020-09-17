@@ -13,7 +13,8 @@ import { VistareservasComponent } from './components/vistareservas/vistareservas
 import { VistausuariosComponent } from './components/vistausuarios/vistausuarios.component';
 import { HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     AppMaterialModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatCardModule
   
   ],
   providers: [],

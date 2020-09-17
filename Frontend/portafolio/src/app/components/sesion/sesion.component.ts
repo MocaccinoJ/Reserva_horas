@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/servicio/auth.service';
 import { Usuario } from 'src/app/interfaces/usuario';
-import { UsuarioService } from 'src/app/servicio/usuario.service';
-
 
 @Component({
   selector: 'app-sesion',
@@ -10,13 +10,51 @@ import { UsuarioService } from 'src/app/servicio/usuario.service';
   styleUrls: ['./sesion.component.css']
 })
 export class SesionComponent implements OnInit {
+@Input() usuario: Usuario
 
-  constructor(private service: UsuarioService, private router: Router) { }
+  
+    constructor(
+      private fb: FormBuilder,
+      private route: ActivatedRoute,
+      private router: Router,
+      private authService: AuthService
+    ) {
+    }
+  
+    ngOnInit(): void {
 
-  ngOnInit(): void {
-  }
-
-  loginUsuario(correo: string, contrasenha: string){
-    this.service.loginUsuario({correo, contrasenha} as Usuario).subscribe(_=> this.router.navigate(['/usuario']))
-  }
-}
+      this.form = this.fb.group({
+        username: ['', Validators.email],
+        password: ['', Validators.required]
+      });
+  
+    }
+  
+    form: FormGroup;
+    public loginInvalid: boolean;
+    private formSubmitAttempt: boolean;
+    private returnUrl: string;
+  
+    onSubmit() {
+      this.loginInvalid = false;
+      this.formSubmitAttempt = false;
+      if (this.form.valid) {
+        try {
+          const username = this.form.get('username').value;
+          const password = this.form.get('password').value;
+  
+          let usuario: Usuario = { correo: username, contrasenha: password } as Usuario;
+          this.authService.loginUsuario(usuario).subscribe(userResponse => {
+            localStorage.setItem("usuario", JSON.stringify(userResponse));
+            this.router.navigate(['/usuario'])
+          });
+  
+        } catch (err) {
+          console.log(err);
+          this.loginInvalid = true;
+        }
+      } else {
+        this.formSubmitAttempt = true;
+      }
+    }
+ }
