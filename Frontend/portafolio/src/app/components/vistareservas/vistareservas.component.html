@@ -7,3 +7,54 @@
     </a>
   </nav>
 
+
+
+
+  <div style="width: 70%; margin: 1em auto;" class="mat-elevation-z2">
+    <h2 style="color: whitesmoke;">Usuarios de Keephealth</h2>
+    <mat-table [dataSource]="reserva">
+        <ng-container matColumnDef="ID">
+            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let reserva"> {{reserva.ID}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="fecha">
+            <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+            <mat-cell *matCellDef="let reserva"> {{reserva.fecha}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="hora">
+            <mat-header-cell *matHeaderCellDef> Hora </mat-header-cell>
+            <mat-cell *matCellDef="let reserva"> {{reserva.hora}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="correo_u">
+            <mat-header-cell *matHeaderCellDef> Correo Usuario </mat-header-cell>
+            <mat-cell *matCellDef="let reserva"> {{reserva.correo_u}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="servicio">
+            <mat-header-cell *matHeaderCellDef> Tipo de Servicio </mat-header-cell>
+            <mat-cell *matCellDef="let reserva"> {{reserva.servicio}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="ubicacion_f">
+            <mat-header-cell *matHeaderCellDef> Tipo de Servicio </mat-header-cell>
+            <mat-cell *matCellDef="let reserva"> {{reserva.ubicacion_f}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="estado">
+           <mat-header-cell *matHeaderCellDef> Estado </mat-header-cell>
+           <mat-cell *matCellDef="let reserva"> {{reserva.estado}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="correo_a">
+          <mat-header-cell *matHeaderCellDef> Correo Administrador </mat-header-cell>
+          <mat-cell *matCellDef="let reserva"> {{reserva.correo_a}} </mat-cell>
+       </ng-container>
+        <ng-container matColumnDef="confirmar">
+            <mat-header-cell *matHeaderCellDef> Confirmar Reserva </mat-header-cell>
+            <mat-cell *matCellDef="let reserva; index as i">
+                <button mat-mini-fab color="primary" (click)="confirmar(i)">
+                    <mat-icon>Confirmar</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+        
+        <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+        <mat-row *matRowDef="let myRowData; columns: columnas"></mat-row>
+    </mat-table>
+</div>
