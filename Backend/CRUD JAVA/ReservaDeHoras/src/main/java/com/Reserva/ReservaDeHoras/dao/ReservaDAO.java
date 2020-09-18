@@ -111,7 +111,7 @@ public class ReservaDAO {
         }
         return reservas;
     }
-    //METODO PARA CAMBIAR EL ESTADO DE UNA RESERVA
+    //METODO PARA CAMBIAR EL ESTADO DE UNA RESERVA1
     public void confirmarReserva(int id, reserva r) throws SQLException {
         String sql = "UPDATE reserva SET correo_a = ?, estado = 'Confirmado' WHERE id = ?";
 
@@ -121,6 +121,5 @@ public class ReservaDAO {
 
         ps.executeUpdate();
     }
-
-    //METODO PARA CAMBIAR EL SERVICIO DE UNA RESERVA???
+//BUSCAR FORMA PARA CAMBIAR HACER UPDATE DE LOS SERVICIOS
 }
