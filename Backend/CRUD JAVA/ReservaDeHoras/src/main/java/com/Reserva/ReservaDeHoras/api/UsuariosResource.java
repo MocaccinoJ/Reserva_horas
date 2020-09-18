@@ -27,14 +27,14 @@ public class UsuariosResource {
     }
     //METODO PARA EDITAR UN USUARIO
     @RequestMapping(method = RequestMethod.PUT, value = "/usuarios/editar/{id}")
-    public void updateUsuario (@PathVariable("id") String i,
+    public void updateUsuario (@PathVariable("id") int id,
                                @RequestBody usuarios a) throws SQLException {
-        new UsuariosDAO().actualizarUsuario(a,i);
+        new UsuariosDAO().actualizarUsuario(a,id);
     }
     //METODO PARA ELIMINAR UN USUARIO
-    @RequestMapping(method = RequestMethod.DELETE, value = "/usuarios/eliminar/{correo}")
-    public void borrarUsuario (@PathVariable("correo") String correo) throws SQLException{
-        new UsuariosDAO().eliminarUsuario(correo);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/usuarios/eliminar/{id}")
+    public void borrarUsuario (@PathVariable("id") int id) throws SQLException{
+        new UsuariosDAO().eliminarUsuario(id);
     }
     //METODO PARA OBTENER A TODOS LOS USUARIOS
     @RequestMapping(method = RequestMethod.GET, value = "/usuarios/todos/")

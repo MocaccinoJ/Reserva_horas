@@ -26,6 +26,7 @@ public class AdministradoresDAO {
         List<administradores> resultados = new ArrayList<>();
         while (rs.next()){
             administradores a = new administradores(
+                    rs.getInt("id"),
                     rs.getString("nombre"),
                     rs.getString("correo"),
                     rs.getString("contrasenha")
@@ -44,6 +45,7 @@ public class AdministradoresDAO {
         List<administradores> administrador = new LinkedList<>();
         while (rs.next()){
             administradores a  = new administradores(
+                    rs.getInt("id"),
                     rs.getString("nombre"),
                     rs.getString("correo"),
                     rs.getString("contrasenha")
@@ -70,21 +72,21 @@ public class AdministradoresDAO {
     }
     //METODO PARA EDITAR UN ADMINISTRADOR
 
-    public void  actualizarAdministrador(administradores a, String i) throws SQLException {
-        String sql = "UPDATE administradores  SET nombre = ?, contrasenha = ? WHERE correo = ?";
+    public void  actualizarAdministrador(administradores a, int id) throws SQLException {
+        String sql = "UPDATE administradores  SET nombre = ?, contrasenha = ? WHERE id = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setString(1, a.getNombre());
-        ps.setString(3, i);
+        ps.setInt(3, id);
         ps.setString(2, a.getContrasenha());
         ps.executeUpdate();
 
     }
     //METODO PARA BORRAR UN ADMINISTRADOR
 
-    public void borrarAdministrador(String correo) throws SQLException{
-    String sql = "DELETE FROM administradores WHERE correo = ?";
+    public void borrarAdministrador(int id) throws SQLException{
+    String sql = "DELETE FROM administradores WHERE id = ?";
     PreparedStatement ps = connection.prepareStatement(sql);
-    ps.setString(1,correo);
+    ps.setInt(1,id);
     ps.executeUpdate();
     }
 }

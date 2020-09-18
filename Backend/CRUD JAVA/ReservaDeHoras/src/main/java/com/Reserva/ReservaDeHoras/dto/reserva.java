@@ -7,22 +7,21 @@ public class reserva {
     private int id;
     private Date fecha;
     private String hora;
-    private String correo_u;
+    private int  id_u;
     private String servicio;
     private String ubicacion_f;
     private String estado;
-    private String correo_a;
+    private int id_a;
 
-    public reserva(int id, Date fecha, String hora, String correo_u, String servicio,
-                   String ubicacion_f, String estado, String correo_a) {
+    public reserva(int id, Date fecha, String hora, int id_u, String servicio, String ubicacion_f, String estado, int id_a) {
         this.id = id;
         this.fecha = fecha;
         this.hora = hora;
-        this.correo_u = correo_u;
+        this.id_u = id_u;
         this.servicio = servicio;
         this.ubicacion_f = ubicacion_f;
         this.estado = estado;
-        this.correo_a = correo_a;
+        this.id_a = id_a;
     }
 
     public int getId() {
@@ -37,8 +36,8 @@ public class reserva {
         return hora;
     }
 
-    public String getCorreo_u() {
-        return correo_u;
+    public int getId_u() {
+        return id_u;
     }
 
     public String getServicio() {
@@ -53,7 +52,7 @@ public class reserva {
         return estado;
     }
 
-    public String getCorreo_a() {
-        return correo_a;
+    public int getId_a() {
+        return id_a;
     }
 }

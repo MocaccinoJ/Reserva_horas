@@ -30,6 +30,7 @@ public class UsuariosDAO {
         List<usuarios> usuario = new LinkedList<>();
         while (rs.next()){
             usuarios u = new usuarios(
+                    rs.getInt("id"),
                     rs.getString("nombre"),
                     rs.getString("correo"),
                     rs.getString("contrasenha")
@@ -57,21 +58,21 @@ public class UsuariosDAO {
 
     //METODO PARA ACTUALIZAR/EDITAR UN UDUARIO
 
-    public void actualizarUsuario(usuarios a, String i) throws SQLException{
-        String sql = "UPDATE usuarios  SET nombre = ?, contrasenha = ? WHERE correo = ?";
+    public void actualizarUsuario(usuarios a, int id) throws SQLException{
+        String sql = "UPDATE usuarios  SET nombre = ?, contrasenha = ? WHERE id = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setString(1, a.getNombre());
-        ps.setString(3, i);
+        ps.setInt(3, id);
         ps.setString(2, a.getContrasenha());
         ps.executeUpdate();
     }
 
     //METODO PARA BORRAR UN USUARIO
 
-    public void eliminarUsuario(String correo) throws SQLException{
-        String sql = "DELETE FROM usuarios WHERE correo = ?";
+    public void eliminarUsuario(int id) throws SQLException{
+        String sql = "DELETE FROM usuarios WHERE id = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setString(1,correo);
+        ps.setInt(1,id);
         ps.executeUpdate();
     }
     //METODO PARA OBTENER TODOS LOS USUARIOS
@@ -83,6 +84,7 @@ public class UsuariosDAO {
         List<usuarios> resultados = new ArrayList<>();
         while (rs.next()){
             usuarios u = new usuarios(
+                    rs.getInt("id"),
                     rs.getString("nombre"),
                     rs.getString("correo"),
                     rs.getString("contrasenha")
@@ -104,10 +106,11 @@ public class UsuariosDAO {
                     + user.getCorreo() + "'AND contrasenha = '" + user.getContrasenha() + "'");
             ResultSet rs = ps.executeQuery();
             rs.next();
-            String nombre = rs.getString(1);
-            String correo = rs.getString(2);
-            String contrasenha = rs.getString(3);
-            return new usuarios(nombre,correo,contrasenha);
+            int id = rs.getInt(1);
+            String nombre = rs.getString(2);
+            String correo = rs.getString(3);
+            String contrasenha = rs.getString(4);
+            return new usuarios(id, nombre,correo,contrasenha);
         } catch (SQLException e) {
             e.printStackTrace();
         }

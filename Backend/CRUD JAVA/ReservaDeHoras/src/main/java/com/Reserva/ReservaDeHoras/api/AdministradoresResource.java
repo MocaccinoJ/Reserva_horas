@@ -33,15 +33,15 @@ public class AdministradoresResource {
     //METODO PARA EDITAR UN ADMINISTRADOR
 
     @RequestMapping(method = RequestMethod.PUT, value = "/administradores/editar/{id}")
-    public void updateAdministrador (@PathVariable("id") String i,
+    public void updateAdministrador (@PathVariable("id") int id,
                                                  @RequestBody administradores a) throws SQLException {
-        new AdministradoresDAO().actualizarAdministrador(a,i);
+        new AdministradoresDAO().actualizarAdministrador(a,id);
     }
     //METODO PARA ELIMINAR UN ADMIND
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/administradores/eliminar/{correo}")
-    public void borrarAdministrador (@PathVariable String correo) throws SQLException {
-        new AdministradoresDAO().borrarAdministrador(correo);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/administradores/eliminar/{id}")
+    public void borrarAdministradorbyId (@PathVariable int id) throws SQLException {
+        new AdministradoresDAO().borrarAdministrador(id);
     }
     //METODO PARA OBTENER A TODOS LOS USUARIOS
     @RequestMapping(method = RequestMethod.GET, value = "/administradores/todos/")

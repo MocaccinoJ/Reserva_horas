@@ -15,7 +15,7 @@ public class ReservaResource {
 
     //METODO PARA OBTENER LAS RESERVAS
     @RequestMapping(method = RequestMethod.GET, value = "/reserva/{ID}")
-    public List<reserva> getReservaByCorreoLike (@PathVariable("ID") int id)
+    public List<reserva> getReserva (@PathVariable("ID") int id)
         throws SQLException {
         List<reserva> res = new ReservaDAO().obtenerReservaPorCorreo(id);
         return res;
