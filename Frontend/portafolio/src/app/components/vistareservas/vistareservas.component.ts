@@ -21,7 +21,7 @@ export class VistareservasComponent implements OnInit {
   }
 
   //TABLA DE RESERVAS CON BOTON PARA CONFIRMAR
-  columnas = ['ID','fecha','hora','correo_u','servicio','ubicacion_f','estado','correo_a','confirmar']
+  columnas = ['id','fecha','hora','correo_u','servicio','ubicacion_f','estado','correo_a','confirmar']
 
 
   //METODO DE CONFIRMAR UNA RESERVA A TRAVES DE UN CORREO DE UN ADMINISTRADOR

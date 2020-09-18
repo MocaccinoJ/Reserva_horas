@@ -27,20 +27,22 @@ export class ReservaService {
   }
 
   //METODO PARA ELIMINAR RESERVA(PENDIENTE)
-  eliminarReserva(ID: number): Observable<{}>{
-    return this.http.delete(`${this.reservaURL}eliminar/${ID}`, this.httpOptions);
+  eliminarReserva(id: number): Observable<{}>{
+    return this.http.delete(`${this.reservaURL}eliminar/${id}`, this.httpOptions);
   }
 
   //METODO PARA EDITAR RESERVA (PENDIENTE)
-  editarReserva(reserva: Reserva, ID: number): Observable<Reserva>{
-    return this.http.put<Reserva>(`${this.reservaURL}editar/${ID}`, reserva, this.httpOptions);
+  editarReserva(reserva: Reserva, id: number): Observable<Reserva>{
+    return this.http.put<Reserva>(`${this.reservaURL}editar/${id}`, reserva, this.httpOptions);
   }
   //METODO PARA CONFIRMAR UNA RESERVA
   confirmarReserva( correo_a: String): Observable<{}>{
     return this.http.put(`${this.reservaURL}confirmar/${correo_a}`, this.httpOptions);
   }
 
-  
+  // confirmarReserva( correo_a: String): Observable<{}>{
+  //   return this.http.put(`${this.reservaURL}confirmar/${correo_a}`, this.httpOptions);
+  // }
 }
 /*
   borrarUsuario(correo: String): Observable<{}>{

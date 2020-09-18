@@ -10,12 +10,12 @@
 
 
 
-  <div style="width: 70%; margin: 1em auto;" class="mat-elevation-z2">
+  <div style="width: auto; margin: 1em auto;" class="mat-elevation-z2">
     <h2 style="color: whitesmoke;">Usuarios de Keephealth</h2>
     <mat-table [dataSource]="reserva">
-        <ng-container matColumnDef="ID">
+        <ng-container matColumnDef="id">
             <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-            <mat-cell *matCellDef="let reserva"> {{reserva.ID}} </mat-cell>
+            <mat-cell *matCellDef="let reserva"> {{reserva.id}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="fecha">
             <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
@@ -34,7 +34,7 @@
             <mat-cell *matCellDef="let reserva"> {{reserva.servicio}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="ubicacion_f">
-            <mat-header-cell *matHeaderCellDef> Tipo de Servicio </mat-header-cell>
+            <mat-header-cell *matHeaderCellDef> Ubicacion </mat-header-cell>
             <mat-cell *matCellDef="let reserva"> {{reserva.ubicacion_f}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="estado">
@@ -48,9 +48,7 @@
         <ng-container matColumnDef="confirmar">
             <mat-header-cell *matHeaderCellDef> Confirmar Reserva </mat-header-cell>
             <mat-cell *matCellDef="let reserva; index as i">
-                <button mat-mini-fab color="primary" (click)="confirmar(i)">
-                    <mat-icon>Confirmar</mat-icon>
-                </button>
+                <button mat-button (click)="confirmar(i)" color="primary">Confirmar </button>
             </mat-cell>
         </ng-container>
         

@@ -15,9 +15,9 @@ public class ReservaResource {
 
     //METODO PARA OBTENER LAS RESERVAS
     @RequestMapping(method = RequestMethod.GET, value = "/reserva/{ID}")
-    public List<reserva> getReservaByCorreoLike (@PathVariable("ID") int ID)
+    public List<reserva> getReservaByCorreoLike (@PathVariable("ID") int id)
         throws SQLException {
-        List<reserva> res = new ReservaDAO().obtenerReservaPorCorreo(ID);
+        List<reserva> res = new ReservaDAO().obtenerReservaPorCorreo(id);
         return res;
     }
     //METODO PARA AGREGAR UNA NUEVA RESERVA
@@ -36,8 +36,8 @@ public class ReservaResource {
     //METODO PARA ELIMINAR UNA RESERVA
     // <------------------------OJO CON ESTA CONSULTA------------------------>!!!
     @RequestMapping(method = RequestMethod.DELETE, value = "/reserva/eliminar/{ID}")
-    public void borrarReserva (@PathVariable int ID) throws SQLException {
-        new ReservaDAO().borrarReserva(ID);
+    public void borrarReserva (@PathVariable int id) throws SQLException {
+        new ReservaDAO().borrarReserva(id);
     }
     //METODO PARA OBTENER TODAS LAS RESERVAS
    @RequestMapping(method = RequestMethod.GET, value = "/reserva/todos/")
@@ -51,4 +51,6 @@ public class ReservaResource {
                                   @RequestBody reserva r) throws SQLException{
         new ReservaDAO().confirmarReserva(id, r);
     }
+    //¿Se tiene que hacer un método para insertar el servicio de una reserva?
+    //¿Se tiene que hacer un método para editar el servicio de una reserva?
 }

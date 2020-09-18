@@ -93,7 +93,7 @@ INSERT INTO reserva ([fecha],[hora],[correo_u],[servicio],[ubicacion_f],[estado]
 INSERT INTO reserva ([fecha],[hora],[correo_u],[servicio],[ubicacion_f],[estado]) VALUES ('6/27/2020', '10:45','vitae@elit.ca','1','Ñuña','Sin confirmar');
 INSERT INTO reserva ([fecha],[hora],[correo_u],[servicio],[ubicacion_f],[estado]) VALUES ('12/12/2020', '15:45','magna@Phasellus.co.uk','1','Ñuñita','Sin confirmar');
 INSERT INTO reserva ([fecha],[hora],[correo_u],[servicio],[ubicacion_f],[estado]) VALUES ('9/25/2020', '12:00','iaculis@eu.org','1','Maipo','Sin confirmar');
-INSERT INTO reserva ([fecha],[hora],[correo_u],[servicio],[ubicacion_f],[estado]) VALUES ('3/29/2020', '14:00','eu.dui.Cum@aultriciesadipiscing.net','0','Maipú','Sin confirmar');
+INSERT INTO reserva ([fecha],[hora],[correo_u],[servicio],[ubic	acion_f],[estado]) VALUES ('3/29/2020', '14:00','eu.dui.Cum@aultriciesadipiscing.net','0','Maipú','Sin confirmar');
 INSERT INTO reserva ([fecha],[hora],[correo_u],[servicio],[ubicacion_f],[estado]) VALUES ('7/14/2020', '9:45','mauris.sagittis.placerat@utipsum.net','1','Moscú','Sin confirmar');
 
 

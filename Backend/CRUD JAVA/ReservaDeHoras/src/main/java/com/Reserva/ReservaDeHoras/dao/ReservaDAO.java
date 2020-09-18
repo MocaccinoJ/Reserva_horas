@@ -26,11 +26,11 @@ public class ReservaDAO {
         List<reserva> res = new LinkedList<>();
         while(rs.next()){
             reserva r = new reserva(
-                    rs.getInt("ID"),
+                    rs.getInt("id"),
                     rs.getDate("fecha"),
                     rs.getString("hora"),
                     rs.getString("correo_u"),
-                    rs.getByte("servicio"),
+                    rs.getString("servicio"),
                     rs.getString("ubicacion"),
                     rs.getString("estado"),
                     rs.getString("correo_a")
@@ -42,10 +42,10 @@ public class ReservaDAO {
 
     //OBTENER RESERVA POR CORREO
 
-    public List<reserva> obtenerReservaPorCorreo(int ID) throws SQLException {
-    String sql = "SELECT ID, fecha, hora, correo_u, servicio, ubicacion_f, estado FROM reserva " +
+    public List<reserva> obtenerReservaPorCorreo(int id) throws SQLException {
+    String sql = "SELECT id, fecha, hora, correo_u, servicio, ubicacion_f, estado FROM reserva " +
             "WHERE correo_u = ?";
-    return obtenerResultados(sql, ID);
+    return obtenerResultados(sql, id);
     }
 
     //METODO PARA AÑADIR UNA NUEVA RESERVA
@@ -57,7 +57,7 @@ public class ReservaDAO {
         ps.setDate(1, r.getFecha());
         ps.setString(2,r.getHora());
         ps.setString(3,r.getCorreo_u());
-        ps.setByte(4,r.getServicio());
+        ps.setString(4,r.getServicio());
         ps.setString(5, r.getUbicacion_f());
         ps.setString(6,r.getEstado());
 
@@ -70,11 +70,11 @@ public class ReservaDAO {
         String sql = "UPDATE reserva SET fecha = ?, hora = ?, correo_u = ?," +
                 " servicio = ?, ubicacion_f = ?, estado = ? WHERE ID = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setInt(1,r.getID());
+        ps.setInt(1,r.getId());
         ps.setDate(2, r.getFecha());
         ps.setString(3, r.getHora());
         ps.setString(4, r.getCorreo_u());
-        ps.setByte(5,r.getServicio());
+        ps.setString(5,r.getServicio());
         ps.setString(6,r.getUbicacion_f());
         ps.setString(7,r.getEstado());
         ps.executeUpdate();
@@ -83,10 +83,10 @@ public class ReservaDAO {
     // <------------------------OJO CON ESTA CONSULTA------------------------>!!!
     //METODO PARA ELIMINAR UNA RESERVA
     // <------------------------OJO CON ESTA CONSULTA------------------------>!!!
-    public void borrarReserva(int ID) throws SQLException{
+    public void borrarReserva(int id) throws SQLException{
         String sql = "DELETE FROM reserva WHERE correo_u = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setInt(1,ID);
+        ps.setInt(1,id);
         ps.executeUpdate();
     }
 //METODO PARA OBTENER LAS RESERVAS COMPLETAS
@@ -97,11 +97,11 @@ public class ReservaDAO {
         List<reserva> reservas = new ArrayList<>();
         while(rs.next()){
             reserva r = new reserva(
-                    rs.getInt("ID"),
+                    rs.getInt("id"),
                     rs.getDate("fecha"),
                     rs.getString("hora"),
                     rs.getString("correo_u"),
-                    rs.getByte("servicio"),
+                    rs.getString("servicio"),
                     rs.getString("ubicacion_f"),
                     rs.getString("estado"),
                     rs.getString("correo_u")
@@ -113,7 +113,7 @@ public class ReservaDAO {
     }
     //METODO PARA CAMBIAR EL ESTADO DE UNA RESERVA
     public void confirmarReserva(int id, reserva r) throws SQLException {
-        String sql = "UPDATE reserva SET correo_a = ?, estado = 'Confirmado' WHERE ID = ?";
+        String sql = "UPDATE reserva SET correo_a = ?, estado = 'Confirmado' WHERE id = ?";
 
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setString(1,r.getCorreo_a());
@@ -121,19 +121,6 @@ public class ReservaDAO {
 
         ps.executeUpdate();
     }
-}
 
-/*
-*     public void actualizarReserva(reserva r, int a) throws SQLException{
-        String sql = "UPDATE reserva SET fecha = ?, hora = ?, correo_u = ?," +
-                " servicio = ?, ubicacion_f = ?, estado = ? WHERE ID = ?";
-        PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setInt(1,r.getID());
-        ps.setDate(2, r.getFecha());
-        ps.setString(3, r.getHora());
-        ps.setString(4, r.getCorreo_u());
-        ps.setByte(5,r.getServicio());
-        ps.setString(6,r.getUbicacion_f());
-        ps.setString(7,r.getEstado());
-        ps.executeUpdate();
-    }*/
+    //METODO PARA CAMBIAR EL SERVICIO DE UNA RESERVA???
+}
