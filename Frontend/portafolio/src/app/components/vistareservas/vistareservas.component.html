@@ -8,7 +8,7 @@
   </nav>
 
 
-<!-- TABLA PARA QUE LOS ADMINISTRADORES VEAN LA RESERVA (METODO DE CONFIRMACION DE RESERVA NO FUNCIONAL)-->
+<!-- TABLA PARA QUE LOS ADMINISTRADORES VEAN LA RESERVA (METODO DE CONFIRMACION DE RESERVA NO FUNCIONANDO)-->
 
   <div style="width: auto; margin: 1em auto;" class="mat-elevation-z2">
     <h2 style="color: whitesmoke;">Usuarios de Keephealth</h2>
@@ -25,9 +25,9 @@
             <mat-header-cell *matHeaderCellDef> Hora </mat-header-cell>
             <mat-cell *matCellDef="let reserva"> {{reserva.hora}} </mat-cell>
         </ng-container>
-        <ng-container matColumnDef="correo_u">
-            <mat-header-cell *matHeaderCellDef> Correo Usuario </mat-header-cell>
-            <mat-cell *matCellDef="let reserva"> {{reserva.correo_u}} </mat-cell>
+        <ng-container matColumnDef="id_u">
+            <mat-header-cell *matHeaderCellDef> ID Usuario </mat-header-cell>
+            <mat-cell *matCellDef="let reserva"> {{reserva.id_u}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="servicio">
             <mat-header-cell *matHeaderCellDef> Tipo de Servicio </mat-header-cell>
@@ -41,9 +41,9 @@
            <mat-header-cell *matHeaderCellDef> Estado </mat-header-cell>
            <mat-cell *matCellDef="let reserva"> {{reserva.estado}} </mat-cell>
         </ng-container>
-        <ng-container matColumnDef="correo_a">
-          <mat-header-cell *matHeaderCellDef> Correo Administrador </mat-header-cell>
-          <mat-cell *matCellDef="let reserva"> {{reserva.correo_a}} </mat-cell>
+        <ng-container matColumnDef="id_a">
+          <mat-header-cell *matHeaderCellDef> ID Administrador </mat-header-cell>
+          <mat-cell *matCellDef="let reserva"> {{reserva.id_a}} </mat-cell>
        </ng-container>
         <ng-container matColumnDef="confirmar">
             <mat-header-cell *matHeaderCellDef> Confirmar Reserva </mat-header-cell>

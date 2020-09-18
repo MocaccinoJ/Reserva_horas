@@ -21,16 +21,16 @@ export class VistareservasComponent implements OnInit {
   }
 
   //TABLA DE RESERVAS CON BOTON PARA CONFIRMAR
-  columnas = ['id','fecha','hora','correo_u','servicio','ubicacion_f','estado','correo_a','confirmar']
+  columnas = ['id','fecha','hora','id_u','servicio','ubicacion_f','estado','id_a','confirmar']
 
 
   //METODO DE CONFIRMAR UNA RESERVA A TRAVES DE UN CORREO DE UN ADMINISTRADOR
   confirmar(i){
-    const email = this.reserva[i].correo_a
-    this.servicio_r.confirmarReserva(email).subscribe(_=>this.obtenerReservas());
-    this.servicio_r.confirmarReserva(email).subscribe();
+    const ident = this.reserva[i].id_a
+    this.servicio_r.confirmarReserva(ident).subscribe(_=>this.obtenerReservas());
+    this.servicio_r.confirmarReserva(ident).subscribe();
     console.log(this.reserva);
-    console.log(email);
+    console.log(ident);
 
   }
     //METODO PARA OBTENER LAS RESERVAS EN UNA TABLA

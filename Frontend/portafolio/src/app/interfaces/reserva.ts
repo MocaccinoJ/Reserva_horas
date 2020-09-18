@@ -2,9 +2,9 @@ export interface Reserva {
     id : number;
     fecha : Date;
     hora : string;
-    correo_u : string;
-    servicio : number;
+    id_u : number;
+    servicio : string;
     ubicacion_f : string;
     estado : string;
-    correo_a : string;
+    id_a : number;
 }

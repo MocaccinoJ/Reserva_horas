@@ -36,8 +36,8 @@ export class ReservaService {
     return this.http.put<Reserva>(`${this.reservaURL}editar/${id}`, reserva, this.httpOptions);
   }
   //METODO PARA CONFIRMAR UNA RESERVA
-  confirmarReserva( correo_a: String): Observable<{}>{
-    return this.http.put(`${this.reservaURL}confirmar/${correo_a}`, this.httpOptions);
+  confirmarReserva( id_a: number): Observable<{}>{
+    return this.http.put(`${this.reservaURL}confirmar/${id_a}`, this.httpOptions);
   }
 
   // confirmarReserva( correo_a: String): Observable<{}>{
