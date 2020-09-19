@@ -42,7 +42,8 @@ public class UsuariosResource {
         List<usuarios> resultados = new UsuariosDAO().obtenerTodosResultados();
         return resultados;
     }
-    @RequestMapping(method = RequestMethod.POST, value = "/usuarios/login/")
+    //METODO DE LOGGEO PARA UN USUARIO
+    @RequestMapping(method = RequestMethod.POST, value = "/usuarios/loginUsuario/")
     public usuarios loginUsuario(@RequestBody usuarios user) throws Exception {
         return UsuariosDAO.loginUsuario(user);
     }

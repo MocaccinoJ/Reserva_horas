@@ -49,4 +49,9 @@ public class AdministradoresResource {
         List<administradores> resultados = new AdministradoresDAO().obtenerTodosResultados();
         return resultados;
     }
+    //METODO DE LOGGEO PARA UN ADMINISTRADOR
+    @RequestMapping(method = RequestMethod.POST, value = "/administradores/loginAdmin/")
+    public administradores loginAdmin(@RequestBody administradores user) throws Exception {
+        return AdministradoresDAO.loginAdmin(user);
+    }
 }

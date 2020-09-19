@@ -39,9 +39,10 @@ public class UsuariosDAO {
         }
         return usuario;
     }
+
     //METODO PARA OBTENER USUARIO POR NOMBRE
     public List<usuarios> obtenerUsuarioPorNombre(String nombre) throws SQLException{
-    String sql = "SELECT nombre, correo, contrasenha FROM usuarios WHERE nombre like ?";
+    String sql = "SELECT id, nombre, correo, contrasenha FROM usuarios WHERE nombre like ?";
     return obtenerResultados(sql, nombre);
     }
     //METODO PARA AÑADIR UN USUARIO NUEVO
@@ -96,21 +97,21 @@ public class UsuariosDAO {
     }
 
     //METODO PARA LOGGIN DE USUARIO
-    //QUE COSA MAS NUEVA MI CRACK
-
-    //PRUEBA DOS DIOS MIO
-
-    public static usuarios loginUsuario(usuarios user)  {
+    //OJO CON LOS METODOS DE LOGGEO
+    static public usuarios loginUsuario(usuarios user) {
         try {
-            PreparedStatement ps = connection.prepareStatement("SELECT * FROM usuarios WHERE correo = '"
-                    + user.getCorreo() + "'AND contrasenha = '" + user.getContrasenha() + "'");
+            PreparedStatement ps = connection.prepareStatement(
+                    "SELECT * FROM usuarios WHERE correo = '" + user.getCorreo() + "' AND contrasenha = '"
+                            + user.getContrasenha() + "'");
             ResultSet rs = ps.executeQuery();
             rs.next();
-            int id = rs.getInt(1);
-            String nombre = rs.getString(2);
-            String correo = rs.getString(3);
-            String contrasenha = rs.getString(4);
-            return new usuarios(id, nombre,correo,contrasenha);
+            int numId = rs.getInt(1);
+            String nom = rs.getString(2);
+            String cor = rs.getString(3);
+            String contra = rs.getString(4);
+
+            return new usuarios(numId, nom, cor, contra);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
