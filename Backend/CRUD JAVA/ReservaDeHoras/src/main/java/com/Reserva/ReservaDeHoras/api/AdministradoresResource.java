@@ -50,7 +50,7 @@ public class AdministradoresResource {
         return resultados;
     }
     //METODO DE LOGGEO PARA UN ADMINISTRADOR
-    @RequestMapping(method = RequestMethod.POST, value = "/administradores/loginAdmin/")
+    @RequestMapping(method = RequestMethod.POST, value = "/administradores/login/")
     public administradores loginAdmin(@RequestBody administradores user) throws Exception {
         return AdministradoresDAO.loginAdmin(user);
     }

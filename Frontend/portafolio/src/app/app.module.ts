@@ -15,6 +15,8 @@ import { HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { LoginAdminComponent } from './components/login-admin/login-admin.component';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { MatCardModule } from '@angular/material/card';
     AdminComponent,
     VistareservasComponent,
     VistausuariosComponent,
+    LoginAdminComponent,
+
   ],
   imports: [
     FormsModule,

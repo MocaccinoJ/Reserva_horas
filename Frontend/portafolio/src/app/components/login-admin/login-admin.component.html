@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img
+        width="250"
+        height="60"
+        alt="Logo Portafolio"
+        src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"
+    /></a>
+    <span class="example-spacer"></span>
+  </nav>
+
+  <section class="mt-5 login-user">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 mx-auto  mb-5 formulario card">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <h1 class="mx-auto text-center">Iniciar Sesión</h1>
+            <div class="form-group">
+              <label for="nombreUser">Correo</label>
+              <input type="text" class="form-control" id="nombreUser" formControlName='username'
+                placeholder="Ingrese Correo" #correo>
+            </div>
+            <div class="form-group">
+              <label for="contrasenhaUser">Contraseña</label>
+              <input type="password" class="form-control" id="contrasenhaUser" #contrasena
+                placeholder="Ingrese Contraseña" formControlName='password'>
+            </div>
+  
+            <button class="btn btn-lg Btn-login  btn-block" value="Acceder">Iniciar Sesión</button>
+            <!-- <button class="btn btn-outline-primary my-2 my-sm-0" routerLink="/login-admin"> Administrador</button> -->
+            <div class="form-group text-center mt-5">
+              <p>¿No tienes una cuenta? Registrate <a routerLink="/registro">aquí</a></p>
+              <p>Recupera tu contraseña <a routerLink="/recuperarContrasena"> aquí</a></p>
+              <p>Bienvenido Administrador</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
