@@ -19,5 +19,4 @@ export class AdminComponent implements OnInit {
     localStorage.removeItem("admin");
     this.router.navigate(['/'])
   }
-  title ='KeepHealth';
 }

@@ -30,10 +30,3 @@ export class UsuarioComponent implements OnInit {
     this.router.navigate(['/'])
   }
 }
-
-/*
-  logout(){
-    localStorage.removeItem("usuario");
-    this.router.navigate(['/'])
-  }
-}*/
