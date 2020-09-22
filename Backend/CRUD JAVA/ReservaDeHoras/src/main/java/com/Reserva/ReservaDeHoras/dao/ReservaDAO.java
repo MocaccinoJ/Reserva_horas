@@ -112,12 +112,12 @@ public class ReservaDAO {
         return reservas;
     }
     //METODO PARA CAMBIAR EL ESTADO DE UNA RESERVA1
-    public void confirmarReserva(int id, reserva r) throws SQLException {
+    public void confirmarReserva(int i,reserva r) throws SQLException {
         String sql = "UPDATE reserva SET id_a = ?, estado = 'Confirmado' WHERE id = ?";
 
         PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setInt(1,r.getId_a());
-        ps.setInt(2,id);
+        ps.setInt(1,i);
+        ps.setInt(2,r.getId());
 
         ps.executeUpdate();
     }

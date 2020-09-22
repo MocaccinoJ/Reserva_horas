@@ -29,4 +29,5 @@ export class UsuarioComponent implements OnInit {
     localStorage.removeItem("usuario");
     this.router.navigate(['/'])
   }
+ 
 }

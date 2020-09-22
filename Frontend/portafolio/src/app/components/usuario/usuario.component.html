@@ -19,6 +19,8 @@
     <h3 style="color: rgb(67, 153, 252)">¡Bienvenido!</h3>
   </a>
 </nav>
+
+<!-- COMIENZO DEL FORMULARIO -->
 <body
   class="mat-elevation-z8 sesion text-center"
   style="margin-top: 100px; margin-left: auto; margin-right: auto; padding: 3em; width: 50%; height: 70%"
@@ -29,14 +31,14 @@
   <hr>
   <div class="form-check text-left" >
     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-    <label class="form-check-label" for="exampleRadios1">
+    <label class="form-check-label" for="exampleRadios1" style="margin-left: 3%">
       Venta
     </label>
   </div>
 
   <div class="form-check text-left">
     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-    <label class="form-check-label" for="exampleRadios1">
+    <label class="form-check-label" for="exampleRadios1" style="margin-left: 3%">
       Post Venta
     </label>
   </div>
@@ -59,38 +61,43 @@
       <option>Salcobrand Maipu</option>
     </select>
     <hr>
-    <label for="start">Start date:</label>
+
+    <label for="start">Selecciona la Fecha:</label>
 
 <input type="date" id="start" name="trip-start"
        value="2018-07-22"
-       min="2018-01-01" max="2018-12-31">
+       min="2000-01-01" max="2030-01-01">
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
-  crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')
-      </script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" 
-      integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" 
-      crossorigin="anonymous"></script>
-        <script src="form-validation.js"></script>
+
+  <hr>
+  <form action="../../form-result.php" method="post" target="_blank" style="margin-right: 70%;">
+    <label for="start">Selecciona la Hora:</label>
+    <input type="time" name="limitetiempo" list="listalimitestiempo" > <input type="submit" value="Enviar">
+  
+  </form>
+  <hr>
+
+  
+  <datalist id="listalimitestiempo">
+  
+    <option value="06:00">
+  
+    <option value="08:00">
+  
+   
+  
+  
+  
+  </datalist>
+
 
  <br>
 
-  <button
-    mat-raised-button
-    color="warn"
-    style="margin-left: 1em; margin-top: 2em"
-    routerLink="/usuario"
-  >
+  <button mat-raised-button color="primary" style="margin-left: 1em; margin-top: 2em" routerLink="/usuario">
     Reservar hora
   </button>
-  <button
-    mat-raised-button
-    color="warn"
-    style="margin-left: 1em; margin-top: 2em"
-  >
-    Limpiar datos
-  </button>
+  <button mat-raised-button color="primary" style="margin-left: 1em; margin-top: 2em">
+    Limpiar datos </button>
 </body>
 
