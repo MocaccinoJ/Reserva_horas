@@ -30,3 +30,10 @@ table{
 mat-grid-tile {
     background: lightcyan;
   }
+.video-title > figure {
+    justify-content: flex-start !important;
+}
+h3{
+    text-align: center;
+    color: cornflowerblue;
+}

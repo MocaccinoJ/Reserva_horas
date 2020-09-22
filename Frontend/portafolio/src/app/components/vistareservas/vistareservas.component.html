@@ -48,7 +48,7 @@
         <ng-container matColumnDef="confirmar">
             <mat-header-cell *matHeaderCellDef> Confirmar Reserva </mat-header-cell>
             <mat-cell *matCellDef="let reserva; index as i">
-                <button mat-button (click)="confirmar(i)" color="primary">Confirmar </button>
+                <button mat-button (click)="confirmar(reserva, i)" color="primary">Confirmar </button>
             </mat-cell>
         </ng-container>
         

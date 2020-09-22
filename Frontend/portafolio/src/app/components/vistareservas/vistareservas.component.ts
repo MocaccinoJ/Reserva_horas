@@ -25,12 +25,12 @@ export class VistareservasComponent implements OnInit {
 
 
   //METODO DE CONFIRMAR UNA RESERVA A TRAVES DE UN CORREO DE UN ADMINISTRADOR
-  confirmar(i){
-    const ident = this.reserva[i].id_a
-    this.servicio_r.confirmarReserva(ident).subscribe(_=>this.obtenerReservas());
-    this.servicio_r.confirmarReserva(ident).subscribe();
+  confirmar(reserva, i){
+    
+    this.servicio_r.confirmarReserva(reserva, i).subscribe(_=>this.obtenerReservas());
+    this.servicio_r.confirmarReserva(reserva, i).subscribe();
     console.log(this.reserva);
-    console.log(ident);
+    console.log(reserva,i);
 
   }
     //METODO PARA OBTENER LAS RESERVAS EN UNA TABLA

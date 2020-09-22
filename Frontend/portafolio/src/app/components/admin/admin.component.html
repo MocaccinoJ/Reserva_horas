@@ -1,12 +1,26 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
       <img width="250" height="60" alt="Logo Portafolio" src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"/></a>
-    <span class="example-spacer"></span>
-    <a style="margin-left: 60%">
-      <h3 style="color: rgb(67, 153, 252)">¡Bienvenido Administrador!</h3>
-    </a>
-  </nav>
-<br><br><br><br><br><br><br>
+        <!-- BOTON DE CERRAR LA SESION -->
+  <span class="example-spacer"></span>
+  <a style="margin-left: 70%">
+    <button mat-stroked-button color="primary" (click)="logout()">
+      Cerrar Sesion
+    </button>
+  </a>
+  <!-- BOTON DE CERRAR LA SESION -->
+
+</nav>
+<div>
+  <h3>¡Bienvenido Administrador!</h3>
+<hr />
+<br />
+<br />
+<br>
+
+  
+</div>
+
       <a aria-label="Ver Reservas" target="_blank" title="Ver Reservas" routerLink="/vistareservas" style="margin-left: 25%">
         <button class="btn btn-outline-primary my-2 my-sm-0" style='width:250px; height:25p'> Ver Reservas</button></a>
         <span class="example-spacer"></span>

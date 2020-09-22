@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/servicio/auth.service';
 
 @Component({
   selector: 'app-usuario',
@@ -6,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./usuario.component.css'],
 })
 export class UsuarioComponent implements OnInit {
-  constructor() {}
+  constructor( private router: Router,
+    private AuthService: AuthService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
   
   filtro = (d: Date | null): boolean => {
     const day = (d || new Date()).getDay();
@@ -19,6 +23,17 @@ export class UsuarioComponent implements OnInit {
   horaRes = [];
   horaInicio = '';
   horaFin = '';
+  
+  //METODO DE LOGOUT
+  logout(){
+    localStorage.removeItem("usuario");
+    this.router.navigate(['/'])
+  }
 }
 
-
+/*
+  logout(){
+    localStorage.removeItem("usuario");
+    this.router.navigate(['/'])
+  }
+}*/

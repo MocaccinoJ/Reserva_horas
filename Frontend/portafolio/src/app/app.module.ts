@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { LoginAdminComponent } from './components/login-admin/login-admin.compon
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   
   ],
   providers: [],
