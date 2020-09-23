@@ -59,9 +59,5 @@ hasNum: boolean = true;
     }else{
       alert("Este correo ya se encuentra en uso")
     }
-    
-
-    
-
   }
 }

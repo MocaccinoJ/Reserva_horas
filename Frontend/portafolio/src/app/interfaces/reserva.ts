@@ -1,7 +1,9 @@
+import { Time } from '@angular/common';
+
 export interface Reserva {
     id : number;
     fecha : Date;
-    hora : string;
+    hora : Time;
     id_u : number;
     servicio : string;
     ubicacion_f : string;

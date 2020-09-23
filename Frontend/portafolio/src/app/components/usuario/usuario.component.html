@@ -28,71 +28,71 @@
 <div class="container ">
 
   <h1 class="text-left">Agenda tu hora para:</h1>
+
   <hr>
-  <div class="form-check text-left" >
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-    <label class="form-check-label" for="exampleRadios1" style="margin-left: 3%">
-      Venta
-    </label>
-  </div>
+  
+  <mat-form-field appearance="fill" style="margin-right: 10%; width:45%;">
+    <mat-label>Servicio</mat-label>
+    <mat-select>
+      <mat-option value="option">Venta</mat-option>
+      <mat-option value="option">Post Venta</mat-option>
+    </mat-select>
+  </mat-form-field>
 
-  <div class="form-check text-left">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-    <label class="form-check-label" for="exampleRadios1" style="margin-left: 3%">
-      Post Venta
-    </label>
-  </div>
-
-
+  <mat-form-field appearance="fill" style="float: right; width: 45%;">
+      <mat-label>Sucursal</mat-label>
+      <mat-select>
+        <mat-option value="option1">Cruz Verde San Bernardo</mat-option>
+        <mat-option value="option1">Cruz Verde Ñuñoa</mat-option>
+        <mat-option value="option1">Cruz Verde Maipu</mat-option>
+        <mat-option value="option1">Ahumada San Bernardo</mat-option>
+        <mat-option value="option1">Ahumada Ñuñoa</mat-option>
+        <mat-option value="option1">Ahumada Maipu</mat-option>
+        <mat-option value="option1">Salcobrand San Bernardo</mat-option>
+        <mat-option value="option1">Salcobrand Ñuñoa</mat-option>
+      </mat-select>
+      </mat-form-field>
 </div>
 <hr>
-  <div class="form-group text-left">
-    <label for="Select">Selecciona tu sucursal</label>
-    <select id="Select" class="form-control">
-      <option>Sucursal</option>
-      <option>Cruz Verde San bernardo</option>
-      <option>Cruz Verde Nuñoa</option>
-      <option>Cruz Verde Maipu</option>
-      <option>Ahumada San bernardo</option>
-      <option>Ahumada Nuñoa</option>
-      <option>Ahumada Maipu</option>
-      <option>Salcobrand San Bernardo</option>
-      <option>Salcobrand Nuñoa</option>
-      <option>Salcobrand Maipu</option>
-    </select>
-    <hr>
-
-    <label for="start">Selecciona la Fecha:</label>
-
-<input type="date" id="start" name="trip-start"
-       value="2018-07-22"
-       min="2000-01-01" max="2030-01-01">
-  </div>
 
 
-  <hr>
-  <form action="../../form-result.php" method="post" target="_blank" style="margin-right: 70%;">
-    <label for="start">Selecciona la Hora:</label>
-    <input type="time" name="limitetiempo" list="listalimitestiempo" > <input type="submit" value="Enviar">
+<div class="container">
+        <!-- SELECCIONAR LA FECHA  -->
+    <label for="start">Selecciona la Fecha y la Hora:</label>
   
-  </form>
-  <hr>
+    <input type="date" id="start" name="trip-start"
+         value="2018-07-22"
+         min="2000-01-01" max="2030-01-01" style="margin-right: 10%; width:28%;">
 
-  
-  <datalist id="listalimitestiempo">
-  
-    <option value="06:00">
-  
-    <option value="08:00">
-  
-   
-  
-  
-  
-  </datalist>
+         <!-- SELECCIONAR LA HORA  -->
+
+          <form action="../../form-result.php" method="post" target="_blank" style="float: right; width: 45%;" >
+          <input type="time" name="limitetiempo1" list="listalimitestiempo" >
+          </form>
+      
+        
+        <datalist id="listalimitestiempo">
+        
+          <option value="09:00">
+          <option value="10:00">
+          <option value="11:00">
+          <option value="12:00">
+          <option value="13:00">
+          <option value="14:00">
+          <option value="15:00">
+          <option value="16:00">
+          <option value="17:00">
+          <option value="18:00">
+          <option value="19:00">
+          <option value="20:00">
+          <option value="21:00">
+        </datalist>
+
+      </div>
+    
 
 
- <br>
+<hr>
 
   <button mat-raised-button color="primary" style="margin-left: 1em; margin-top: 2em" routerLink="/usuario">
     Reservar hora
@@ -101,3 +101,25 @@
     Limpiar datos </button>
 </body>
 
+<!-- <div style="margin: 2em auto; padding: 2em; width: 50%" class="mat-elevation-z8">
+  <h3>Regístrate</h3>
+  <p>Crea tu cuenta y administra tu tiempo mejor, ¡juntos podemos pelear contra el virus!</p>
+  <form>
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Nombre</mat-label>
+          <input matInput class="inputText" #nombre required placeholder="Nombre completo" [(ngModel)]="usuario.nombre" name = 'usuario.nombre'>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Correo</mat-label>
+          <input matInput #correo required placeholder="example@email.com" class="inputText" [(ngModel)]="usuario.correo" name = 'usuario.correo'>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" #contrasenha required class="inputText" [(ngModel)]="usuario.contrasenha" name = 'usuario.contrasenha'>
+          <mat-hint>Ingresa una contraseña con al menos una letra y un número, y que tenga un largo mínimo de 4 caracteres</mat-hint>
+      </mat-form-field>
+   
+      <button mat-raised-button type="button"color="primary" style="margin: 1em;" (click)="validarDatos()"> Enviar</button>
+      <button mat-raised-button type="reset" color="secondary" style="margin-left: 1em;">Limpiar datos</button>
+  </form>
+</div> -->
