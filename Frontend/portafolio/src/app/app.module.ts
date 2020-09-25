@@ -20,6 +20,7 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ReservaUsuarioComponent } from './components/reserva-usuario/reserva-usuario.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { MatInputModule } from '@angular/material/input';
     VistareservasComponent,
     VistausuariosComponent,
     LoginAdminComponent,
+    ReservaUsuarioComponent,
 
   ],
   imports: [

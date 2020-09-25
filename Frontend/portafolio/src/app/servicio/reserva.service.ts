@@ -40,12 +40,18 @@ export class ReservaService {
     const url = 'confirmar/'
     return this.http.put(`${this.reservaURL}confirmar/${i}`  ,reserva, this.httpOptions);
   }
-  // confirmarReserva( correo_a: String): Observable<{}>{
-  //   return this.http.put(`${this.reservaURL}confirmar/${correo_a}`, this.httpOptions);
-  //}
+  //METODO PARA OBTENER UNA RESERVA POR ID
+  obtenerReservaPorIdU(id):Observable<Reserva[]>{
+    return this.http.get<Reserva[]>(this.reservaURL+'idUsuario/'+id);
+  }
+
 }
+
 /*
   borrarUsuario(correo: String): Observable<{}>{
     return this.http.delete(`${this.usuarioURL}eliminar/${correo}`, this.httpOptions);
   }
   */ 
+   // confirmarReserva( correo_a: String): Observable<{}>{
+  //   return this.http.put(`${this.reservaURL}confirmar/${correo_a}`, this.httpOptions);
+  //}

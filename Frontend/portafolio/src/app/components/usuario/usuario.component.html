@@ -13,49 +13,79 @@
       Cerrar Sesion
     </button>
   </a>
-  <!-- BOTON DE CERRAR LA SESION -->
-  <span class="example-spacer"></span>
-  <a style="margin-left: 60%">
-    <h3 style="color: rgb(67, 153, 252)">¡Bienvenido!</h3>
-  </a>
 </nav>
+
+
+<!-- BIENVENIDA -->
+  <h3 style="color: rgb(67, 153, 252); text-align: center;">¡Bienvenido!</h3>
+
 
 <!-- COMIENZO DEL FORMULARIO -->
 <body
   class="mat-elevation-z8 sesion text-center"
   style="margin-top: 100px; margin-left: auto; margin-right: auto; padding: 3em; width: 50%; height: 70%"
 >
-<div class="container ">
+
 
   <h1 class="text-left">Agenda tu hora para:</h1>
 
   <hr>
   
-  <mat-form-field matInput #servicio name='reserva.servicio' appearance="fill" style="margin-right: 10%; width:45%;">
+  <!-- <mat-form-field matInput #servicio name='reserva.servicio' appearance="fill" style="margin-right: 10%; width:45%;">
     
    <mat-label matInput #servicio name='reserva.servicio'>Servicio</mat-label> 
     <mat-select>
-      <mat-option value="option">Venta</mat-option>
-      <mat-option value="option">Post Venta</mat-option>
+      <mat-option value="Venta">Venta</mat-option>
+      <mat-option value="Post Venta">Post Venta</mat-option>
     </mat-select>
-  </mat-form-field>
-
-
-
-  <mat-form-field appearance="fill" style="float: right; width: 45%;" matInput #ubicacion_f name='ubicacion_f'>
-    <mat-label matInput #ubicacion_f name='reserva.ubicacion_f' >Farmacia</mat-label> 
-      <mat-select>
-        <mat-option value="option1">Cruz Verde San Bernardo</mat-option>
-        <mat-option value="option1">Cruz Verde Ñuñoa</mat-option>
-        <mat-option value="option1">Cruz Verde Maipu</mat-option>
-        <mat-option value="option1">Ahumada San Bernardo</mat-option>
-        <mat-option value="option1">Ahumada Ñuñoa</mat-option>
-        <mat-option value="option1">Ahumada Maipu</mat-option>
-        <mat-option value="option1">Salcobrand San Bernardo</mat-option>
-        <mat-option value="option1">Salcobrand Ñuñoa</mat-option>
-      </mat-select>
-      </mat-form-field>
+  </mat-form-field> -->
+<div>
+    <label class="" for="servicio"><h5>Servicio</h5></label>
+    <select  class="custom-select" name="servicio" #servicio>
+        <option disabled>Ubicacion:</option>
+        <option value="Venta">Venta</option>
+        <option value="Post Venta">Post Venta</option>
+    </select>
 </div>
+
+<br>
+
+<div>
+  <label class="" for="ubicacion_f"><h5>Ubicacion</h5></label>
+  <select class="custom-select" name="ubicacion_f" #ubicacion_f>
+      <option disabled>Ubicacion:</option>
+      <option value="Cruz Verde San Bernardo">Cruz Verde San Bernardo</option>
+      <option value="Cruz Verde Ñuñoa">Cruz Verde Ñuñoa</option>
+      <option value="Cruz Verde Maipu">Cruz Verde Maipu</option>
+
+      <option value="Ahumada San Bernardo">Ahumada San Bernardo</option>
+      <option value="Ahumada Ñuñoa">Ahumada Ñuñoa</option>
+      <option value="Ahumada Maipu">Ahumada Maipu</option>
+
+      <option value="Salcobrand San Bernardo">Salcobrand San Bernardo</option>
+      <option value="Salcobrand Ñuñoa">Salcobrand Ñuñoa</option>
+  </select>
+</div>
+
+  <!-- <mat-form-field appearance="fill" style="float: right; width: 45%;" #ubicacion_f name='reserva.ubicacion_f'>
+    <mat-label #ubicacion_f name='reserva.ubicacion_f'>Farmacia</mat-label> 
+   
+      <mat-select>
+        
+        <mat-option value="Cruz Verde San Bernardo">Cruz Verde San Bernardo</mat-option>
+        <mat-option value="Cruz Verde Ñuñoa">Cruz Verde Ñuñoa</mat-option>
+        <mat-option value="Cruz Verde Maipu">Cruz Verde Maipu</mat-option>
+        <mat-option value="Ahumada San Bernardo">Ahumada San Bernardo</mat-option>
+        <mat-option value="Ahumada Ñuñoa">Ahumada Ñuñoa</mat-option>
+        <mat-option value="Ahumada Maipu">Ahumada Maipu</mat-option>
+        <mat-option value="Salcobrand San Bernardo">Salcobrand San Bernardo</mat-option>
+        <mat-option value="Salcobrand Ñuñoa">Salcobrand Ñuñoa</mat-option>
+      
+      </mat-select>
+  </mat-form-field>  -->
+
+
+
 <hr>
 
 
@@ -69,9 +99,9 @@
 
          <!-- SELECCIONAR LA HORA  -->
 
-          <form action="../../form-result.php" method="post" target="_blank" style="float: right; width: 45%;" >
-          <input type="time" list="listalimitestiempo" matInput #hora name='reserva.hora' >
-          </form>
+    <form action="../../form-result.php" method="post" target="_blank" style="float: right; width: 45%;" >
+    <input type="time" list="listalimitestiempo" matInput #hora name='reserva.hora' >
+    </form>
       
         
   <datalist id="listalimitestiempo">
@@ -93,7 +123,6 @@
 
 </div>
 <hr>
-<!-- PRUEBA 1 DE OBTENER ID  -->
 
 <mat-form-field appearance="outline" style="width: 100%;">
   <mat-label>ID de Usuario</mat-label>

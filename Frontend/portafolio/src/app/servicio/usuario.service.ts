@@ -36,5 +36,4 @@ export class UsuarioService {
   loginUsuario(usuario: Usuario) {
     return this.http.post<Usuario>(this.usuarioURL+"login/", usuario, this.httpOptions)
   }
-
 }

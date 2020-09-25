@@ -8,6 +8,7 @@ import { AdminComponent} from '../app/components/admin/admin.component';
 import { VistareservasComponent } from '../app/components/vistareservas/vistareservas.component';
 import { VistausuariosComponent } from '../app/components/vistausuarios/vistausuarios.component';
 import { LoginAdminComponent } from 'src/app/components/login-admin/login-admin.component';
+import { ReservaUsuarioComponent } from 'src/app/components/reserva-usuario/reserva-usuario.component';
 
 const routes: Routes = [
   
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'vistareservas', component: VistareservasComponent},
   {path: 'vistausuarios', component: VistausuariosComponent},
   {path: 'login-admin', component: LoginAdminComponent},
+  {path: 'reservausuario', component: ReservaUsuarioComponent},
  
 
 ];

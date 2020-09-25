@@ -31,7 +31,7 @@ public class ReservaDAO {
                     rs.getString("hora"),
                     rs.getInt("id_u"),
                     rs.getString("servicio"),
-                    rs.getString("ubicacion"),
+                    rs.getString("ubicacion_f"),
                     rs.getString("estado"),
                     rs.getInt("id_a")
             );
@@ -83,7 +83,7 @@ public class ReservaDAO {
     //METODO PARA ELIMINAR UNA RESERVA
     // <------------------------OJO CON ESTA CONSULTA------------------------>!!!
     public void borrarReserva(int id) throws SQLException{
-        String sql = "DELETE FROM reserva WHERE id_u = ?";
+        String sql = "DELETE FROM reserva WHERE id = ?";
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setInt(1,id);
         ps.executeUpdate();
@@ -120,5 +120,13 @@ public class ReservaDAO {
 
         ps.executeUpdate();
     }
+ //METODO PARA OBTENER LAS RESERVAS POR USUARIO
+    public List<reserva> obtenerReservaPorIdUsuario(int id_u) throws SQLException {
+        String sql = "SELECT * FROM reserva WHERE id_u = ?";
+       return obtenerResultados(sql, id_u);
+    }
 //BUSCAR FORMA PARA CAMBIAR HACER UPDATE DE LOS SERVICIOS
+
+    //OBTENER RESULTADOS NUM
+
 }

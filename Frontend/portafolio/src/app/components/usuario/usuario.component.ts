@@ -25,6 +25,7 @@ export class UsuarioComponent implements OnInit {
 
     reserva: Reserva [];
 
+
     usuario: Usuario = {
       id: null,
       nombre: '',
