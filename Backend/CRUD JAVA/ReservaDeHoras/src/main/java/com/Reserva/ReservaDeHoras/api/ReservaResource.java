@@ -48,9 +48,7 @@ public class ReservaResource {
     //METODO PARA CAMBIAR EL ESTADO DE UNA RESERVA
     @RequestMapping(method = RequestMethod.PUT, value = "/reserva/confirmar/{i}")
     public void confirmarReserva (@PathVariable ("i") int i,
-                                  @RequestBody reserva r) throws SQLException{
-        new ReservaDAO().confirmarReserva(i,r);
+                                  @RequestBody reserva r) throws SQLException {
+        new ReservaDAO().confirmarReserva(i, r);
     }
-    //¿Se tiene que hacer un método para insertar el servicio de una reserva?
-    //¿Se tiene que hacer un método para editar el servicio de una reserva?
 }

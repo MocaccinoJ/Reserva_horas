@@ -39,6 +39,26 @@ public class UsuariosDAO {
         }
         return usuario;
     }
+    //OBTENER RESULTADOS CON INT
+
+    private List <usuarios> obtenerResultadosNum(String sql, int parametro) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ps.setInt(1,parametro);
+        ResultSet rs = ps.executeQuery();
+        List<usuarios> usuario = new LinkedList<>();
+        while (rs.next()){
+            usuarios u = new usuarios(
+                    rs.getInt("id"),
+                    rs.getString("nombre"),
+                    rs.getString("correo"),
+                    rs.getString("contrasenha")
+            );
+            usuario.add(u);
+        }
+        return usuario;
+    }
+
+
 
     //METODO PARA OBTENER USUARIO POR NOMBRE
     public List<usuarios> obtenerUsuarioPorNombre(String nombre) throws SQLException{
@@ -117,4 +137,14 @@ public class UsuariosDAO {
         }
         return null;
     }
+    //OBTENER USUARIOS POR ID
+    public List<usuarios> obtenerUsuarioPorId(int id) throws SQLException{
+        String sql = "SELECT * FROM usuarios WHERE id = ?";
+        return obtenerResultadosNum(sql,id);
+    }
 }
+/*    public List<usuarios> obtenerUsuarioPorNombre(String nombre) throws SQLException{
+    String sql = "SELECT id, nombre, correo, contrasenha FROM usuarios WHERE nombre like ?";
+    return obtenerResultados(sql, nombre);
+    }
+*/

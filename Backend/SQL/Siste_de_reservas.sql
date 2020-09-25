@@ -114,15 +114,15 @@ CREATE TABLE [farmacias] (
 	comuna varchar (150),
 	);
 GO
-INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Cruz Verde', 'Bernardo','San Bernardo');
-INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Ahumada', 'Bernardito','San Bernardo');
-INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Salcobrand', 'Bernar', 'San Bernardo');
-INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Cruz Verde', 'Ñoño', 'Ñuñoa');
-INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Ahumada', 'Ñuña', 'Ñuñoa');
-INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Salcobrand', 'Ñuñita', 'Ñuñoa');
-INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Cruz Verde', 'Maipo', 'Maipú');
-INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Ahumada', 'Maipú', 'Maipú');
-INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Salcobrand', 'Moscú', 'Maipú');
+INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Cruz Verde', 'Cruz Verde Bernardo','San Bernardo');
+INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Ahumada', 'Ahumada Ñuñoa','San Bernardo');
+INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Salcobrand', 'Salcobrand San Bernardo', 'San Bernardo');
+INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Cruz Verde', 'Cruz Verde Ñuñoa', 'Ñuñoa');
+INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Salcobrand', 'Salcobrand Ñuñoa', 'Ñuñoa');
+INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Cruz Verde', 'Cruz Verde Maipu', 'Maipú');
+INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Ahumada', 'Ahumada Maipu', 'Maipú');
+
 
 SELECT * FROM reserva
 SELECT * FROM farmacias
+

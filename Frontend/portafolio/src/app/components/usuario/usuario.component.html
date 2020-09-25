@@ -31,16 +31,19 @@
 
   <hr>
   
-  <mat-form-field appearance="fill" style="margin-right: 10%; width:45%;">
-    <mat-label>Servicio</mat-label>
+  <mat-form-field matInput #servicio name='reserva.servicio' appearance="fill" style="margin-right: 10%; width:45%;">
+    
+   <mat-label matInput #servicio name='reserva.servicio'>Servicio</mat-label> 
     <mat-select>
       <mat-option value="option">Venta</mat-option>
       <mat-option value="option">Post Venta</mat-option>
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field appearance="fill" style="float: right; width: 45%;">
-      <mat-label>Sucursal</mat-label>
+
+
+  <mat-form-field appearance="fill" style="float: right; width: 45%;" matInput #ubicacion_f name='ubicacion_f'>
+    <mat-label matInput #ubicacion_f name='reserva.ubicacion_f' >Farmacia</mat-label> 
       <mat-select>
         <mat-option value="option1">Cruz Verde San Bernardo</mat-option>
         <mat-option value="option1">Cruz Verde Ñuñoa</mat-option>
@@ -60,46 +63,79 @@
         <!-- SELECCIONAR LA FECHA  -->
     <label for="start">Selecciona la Fecha y la Hora:</label>
   
-    <input type="date" id="start" name="trip-start"
+    <input type="date" id="start" matInput #fecha name='reserva.fecha'
          value="2018-07-22"
          min="2000-01-01" max="2030-01-01" style="margin-right: 10%; width:28%;">
 
          <!-- SELECCIONAR LA HORA  -->
 
           <form action="../../form-result.php" method="post" target="_blank" style="float: right; width: 45%;" >
-          <input type="time" name="limitetiempo1" list="listalimitestiempo" >
+          <input type="time" list="listalimitestiempo" matInput #hora name='reserva.hora' >
           </form>
       
         
-        <datalist id="listalimitestiempo">
-        
-          <option value="09:00">
-          <option value="10:00">
-          <option value="11:00">
-          <option value="12:00">
-          <option value="13:00">
-          <option value="14:00">
-          <option value="15:00">
-          <option value="16:00">
-          <option value="17:00">
-          <option value="18:00">
-          <option value="19:00">
-          <option value="20:00">
-          <option value="21:00">
-        </datalist>
+  <datalist id="listalimitestiempo">
+  
+    <option value="09:00">
+    <option value="10:00">
+    <option value="11:00">
+    <option value="12:00">
+    <option value="13:00">
+    <option value="14:00">
+    <option value="15:00">
+    <option value="16:00">
+    <option value="17:00">
+    <option value="18:00">
+    <option value="19:00">
+    <option value="20:00">
+    <option value="21:00">
+  </datalist>
 
-      </div>
-    
+</div>
+<hr>
+<!-- PRUEBA 1 DE OBTENER ID  -->
+
+<mat-form-field appearance="outline" style="width: 100%;">
+  <mat-label>ID de Usuario</mat-label>
+  <input matInput #id_u class="inputText" [(ngModel)]="usuario.id" name = 'usuario.id'  disabled>
+</mat-form-field>
 
 
 <hr>
 
-  <button mat-raised-button color="primary" style="margin-left: 1em; margin-top: 2em" routerLink="/usuario">
+
+  <button mat-raised-button color="primary" style="margin-left: 1em; margin-top: 2em" routerLink="/usuario" 
+  (click)="crearReserva1(servicio.value, ubicacion_f.value, fecha.value, hora.value, id_u.value)">
     Reservar hora
   </button>
   <button mat-raised-button color="primary" style="margin-left: 1em; margin-top: 2em">
     Limpiar datos </button>
 </body>
+
+
+<!-- <div style="margin: 1em;">
+  <form>
+      <mat-form-field style="width: 100%;">
+          <mat-label>Nombre: </mat-label>
+          <input matInput #nombre>
+      </mat-form-field>
+      <mat-form-field style="width: 100%;">
+          <mat-label>País: </mat-label>
+          <input matInput #pais>
+      </mat-form-field>
+      <mat-form-field style="width: 100%;">
+          <mat-label>Ciudad: </mat-label>
+          <input matInput #ciudad>
+      </mat-form-field>
+  </form>
+  <button mat-raised-button color="primary" 
+          (click)="guardarAeropuerto(nombre.value, pais.value, ciudad.value)">
+          Guardar
+  </button>
+  </div> -->
+
+
+
 
 <!-- <div style="margin: 2em auto; padding: 2em; width: 50%" class="mat-elevation-z8">
   <h3>Regístrate</h3>

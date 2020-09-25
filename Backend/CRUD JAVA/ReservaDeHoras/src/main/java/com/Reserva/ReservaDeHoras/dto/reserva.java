@@ -7,14 +7,14 @@ public class reserva {
 
     private int id;
     private Date fecha;
-    private Time hora;
+    private String hora;
     private int  id_u;
     private String servicio;
     private String ubicacion_f;
     private String estado;
     private int id_a;
 
-    public reserva(int id, Date fecha, Time hora, int id_u, String servicio, String ubicacion_f, String estado, int id_a) {
+    public reserva(int id, Date fecha, String hora, int id_u, String servicio, String ubicacion_f, String estado, int id_a) {
         this.id = id;
         this.fecha = fecha;
         this.hora = hora;
@@ -33,7 +33,7 @@ public class reserva {
         return fecha;
     }
 
-    public Time getHora() {
+    public String getHora() {
         return hora;
     }
 

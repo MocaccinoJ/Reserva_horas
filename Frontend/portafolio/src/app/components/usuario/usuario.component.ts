@@ -3,8 +3,12 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/servicio/auth.service';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 import { ReservaService } from 'src/app/servicio/reserva.service';
-import { Usuario } from 'src/app/interfaces/usuario';
 import { Reserva } from 'src/app/interfaces/reserva';
+import { Observable } from 'rxjs';
+import { Usuario } from 'src/app/interfaces/usuario';
+import {UsuarioService} from 'src/app/servicio/usuario.service';
+
+
 
 @Component({
   selector: 'app-usuario',
@@ -13,71 +17,96 @@ import { Reserva } from 'src/app/interfaces/reserva';
   encapsulation: ViewEncapsulation.None,
 })
 export class UsuarioComponent implements OnInit {
-  constructor( private router: Router,
+  constructor( 
+    private router: Router,
     private AuthService: AuthService,
-    private reserva: ReservaService,) { }
+    private servicio_r: ReservaService,
+    private servicio_u: UsuarioService) { }
 
-    ngOnInit(): void {
-    }
+    reserva: Reserva [];
 
     usuario: Usuario = {
-    nombre: '',
-    correo: '',
-    contrasenha: '',
+      id: null,
+      nombre: '',
+      contrasenha: '',
+      correo: '',
     }
 
-  filtro = (d: Date | null): boolean => {
-    const day = (d || new Date()).getDay();
+    ngOnInit(): void {this.obtenerDatosUsuario()
+    }
+   
+  // filtro = (d: Date | null): boolean => {
+  //   const day = (d || new Date()).getDay();
     
-    return day !== 0 && day !== 6;
-  }
-  
+  //   return day !== 0 && day !== 6;
+  // }
+
   //METODO DE LOGOUT
   logout(){
     localStorage.removeItem("usuario");
     this.router.navigate(['/'])
   }
 
+
   //PRIMER INTENTO DE CONEXION CON METODO DE CREAR UNA RESERVA
 
-// export class RegistroComponent implements OnInit {
- 
-// hasLower: boolean = false;
-// hasNum: boolean = true;
-//   constructor(private service: UsuarioService, private router:Router) { }
+  //PRIMERO PASO: TRAER EL ID DEL USUARIO DEL LOCAL STORAGE
 
-//    usuario: Usuario = {
-//    nombre:'',
-//    correo:'',
-//    contrasenha:''
-//   }
-//   ngOnInit(): void {
-//   }
+  // validarDatos(): void {
+  //    if (!this.usuario.nombre){
+  //      alert("Ingrese un nombre")
+  //     return;
+  //   }
 
-//   validarDatos(): void {
-//     if (!this.usuario.nombre){
-//       alert("Ingrese un nombre")
-//       return;
-//     }
+  //   if (!this.usuario.correo){
+  //     alert("Ingrese un correo")
+  //     return;
+  //    }
 
-//     if (!this.usuario.correo){
-//       alert("Ingrese un correo")
-//       return;
-//     }
+  //   if (!this.usuario.contrasenha){
+  //            alert("Ingrese una contraseña")
+  //      return;
+  //    }
 
-//     if (!this.usuario.contrasenha){
-//       alert("Ingrese una contraseña")
-//       return;
-//     }
+  crearReserva1(servicio, ubicacion_f, fecha, hora, id_u){
+    
+    const id = JSON.parse(localStorage.getItem('usuario')).id
+
+     this.servicio_r.agregarReserva({servicio, ubicacion_f, fecha, hora, id_u} as Reserva).subscribe();{
+     this.router.navigate(['/usuario'])
+     }
+    console.log(id)
+  }
+obtenerDatosUsuario(){
+  const id = JSON.parse(localStorage.getItem('usuario')).id
+  console.log(id,'ESTE ES EL ID')
+  this.servicio_u.obtenerUsuariosPorId(id).subscribe(usuario => this.usuario = usuario[0])
+
+}
+  // confirmar(reserva){
+  //   const id = JSON.parse(localStorage.getItem('admin')).id
+  //   this.servicio_r.confirmarReserva(reserva, id).subscribe(_=>this.obtenerReservas());
+   
+  //   console.log(id);
+  // }
+
+
+  
+  //  METODO PARA AGREGAR UNA RESERVA(PENDIENTE)
+  // agregarReserva(reserva: Reserva): Observable<Reserva>{
+  //   return this.http.post<Reserva>(this.reservaURL+"agregar/", reserva, this.httpOptions)
+  // }
 
 
 
-
-
-
-
-
-
+          //Obtener Dato con desde el LocalStorage
+        // confirmar(reserva){
+        //   const id = JSON.parse(localStorage.getItem('admin')).id
+        //   this.servicio_r.confirmarReserva(reserva, id).subscribe(_=>this.obtenerReservas());
+         
+        //   console.log(id);
+      
+        // }
 }
 /*
 

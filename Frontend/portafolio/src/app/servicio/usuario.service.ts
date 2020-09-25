@@ -12,9 +12,11 @@ export class UsuarioService {
   private usuarioURL = 'http://localhost:8080/api/usuarios/'; // URL de la API
 
   obtenerUsuarios(): Observable<Usuario[]>{
-    return this.http.get<Usuario[]>(this.usuarioURL)
+    return this.http.get<Usuario[]>(this.usuarioURL+"nombre/")
   }
-
+  obtenerUsuariosPorId(id): Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(this.usuarioURL+"id/"+id)
+  }
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };

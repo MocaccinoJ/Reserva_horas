@@ -23,7 +23,7 @@ export class ReservaService {
 
   //METODO PARA AGREGAR UNA RESERVA(PENDIENTE)
   agregarReserva(reserva: Reserva): Observable<Reserva>{
-    return this.http.post<Reserva>(this.reservaURL+"agregar/", reserva, this.httpOptions)
+    return this.http.post<Reserva>(this.reservaURL+'agregar/', reserva, this.httpOptions)
   }
 
   //METODO PARA ELIMINAR RESERVA(PENDIENTE)
@@ -36,11 +36,10 @@ export class ReservaService {
     return this.http.put<Reserva>(`${this.reservaURL}editar/${id}`, reserva, this.httpOptions);
   }
   //METODO PARA CONFIRMAR UNA RESERVA
-  confirmarReserva( reserva: Reserva, i ){
+  confirmarReserva( reserva: Reserva,i){
     const url = 'confirmar/'
     return this.http.put(`${this.reservaURL}confirmar/${i}`  ,reserva, this.httpOptions);
   }
-
   // confirmarReserva( correo_a: String): Observable<{}>{
   //   return this.http.put(`${this.reservaURL}confirmar/${correo_a}`, this.httpOptions);
   //}

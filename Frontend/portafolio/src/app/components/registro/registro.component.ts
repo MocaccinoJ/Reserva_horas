@@ -15,9 +15,10 @@ hasNum: boolean = true;
   constructor(private service: UsuarioService, private router:Router) { }
 
    usuario: Usuario = {
-   nombre:'',
-   correo:'',
-   contrasenha:''
+    id: null,
+    nombre:'',
+    correo:'',
+    contrasenha:''
   }
   ngOnInit(): void {
   }

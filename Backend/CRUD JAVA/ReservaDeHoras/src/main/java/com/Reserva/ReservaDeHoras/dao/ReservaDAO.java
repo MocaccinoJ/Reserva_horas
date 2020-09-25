@@ -28,7 +28,7 @@ public class ReservaDAO {
             reserva r = new reserva(
                     rs.getInt("id"),
                     rs.getDate("fecha"),
-                    rs.getTime("hora"),
+                    rs.getString("hora"),
                     rs.getInt("id_u"),
                     rs.getString("servicio"),
                     rs.getString("ubicacion"),
@@ -55,11 +55,10 @@ public class ReservaDAO {
                 + " VALUES (?, ?, ?, ?, ?, 'sin confirmar')";
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setDate(1, r.getFecha());
-        ps.setTime(2,r.getHora());
+        ps.setString(2,r.getHora());
         ps.setInt(3,r.getId_u());
         ps.setString(4,r.getServicio());
         ps.setString(5, r.getUbicacion_f());
-        ps.setString(6,r.getEstado());
 
         ps.executeUpdate();
     }
@@ -72,7 +71,7 @@ public class ReservaDAO {
         PreparedStatement ps = connection.prepareStatement(sql);
         ps.setInt(1,r.getId());
         ps.setDate(2, r.getFecha());
-        ps.setTime(3, r.getHora());
+        ps.setString(3, r.getHora());
         ps.setInt(4, r.getId_u());
         ps.setString(5,r.getServicio());
         ps.setString(6,r.getUbicacion_f());
@@ -99,7 +98,7 @@ public class ReservaDAO {
             reserva r = new reserva(
                     rs.getInt("id"),
                     rs.getDate("fecha"),
-                    rs.getTime("hora"),
+                    rs.getString("hora"),
                     rs.getInt("id_u"),
                     rs.getString("servicio"),
                     rs.getString("ubicacion_f"),

@@ -16,8 +16,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatButtonModule} from '@angular/material/button';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     ReactiveFormsModule,
     MatCardModule,
     MatButtonModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
   
   ],
   providers: [],

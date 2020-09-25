@@ -33,12 +33,9 @@ export class VistareservasComponent implements OnInit {
 
   }
     //METODO PARA OBTENER LAS RESERVAS EN UNA TABLA
-    obtenerReservas() {
-      this.servicio_r.obtenerReservas().subscribe(reserva => this.reserva =reserva);
+  obtenerReservas() {
+    this.servicio_r.obtenerReservas().subscribe(reserva => this.reserva =reserva);
     }
-
-
-
 }
 /*
    obtenerUsuarios() {

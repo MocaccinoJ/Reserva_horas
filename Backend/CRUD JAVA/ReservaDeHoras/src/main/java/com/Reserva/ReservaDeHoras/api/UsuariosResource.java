@@ -14,12 +14,20 @@ import java.util.List;
 public class UsuariosResource {
 //METODO PARA OBTENER A LOS USUARIOS DESDE LA DATABASE
 
-    @RequestMapping(method = RequestMethod.GET, value = "/usuarios/{nombre}")
+    @RequestMapping(method = RequestMethod.GET, value = "/usuarios/nombre/{nombre}")
     public List<usuarios> getUsuariosByNombreLike (@PathVariable("nombre") String nombre)
     throws SQLException{
         List<usuarios> usuario = new UsuariosDAO().obtenerUsuarioPorNombre("%"+nombre+"%");
         return usuario;
     }
+    //OBTENER USUARIO POR ID
+    @RequestMapping(method = RequestMethod.GET, value = "/usuarios/id/{id}")
+    public List<usuarios> getUsuariosByNombreLike (@PathVariable("id") int id)
+            throws SQLException{
+        List<usuarios> usuario = new UsuariosDAO().obtenerUsuarioPorId(id);
+        return usuario;
+    }
+
     //METODO PARA AGREGAR UN USUARIO
     @RequestMapping(method = RequestMethod.POST, value = "/usuarios/agregar/")
     public void addNewUsuario (@RequestBody usuarios u) throws SQLException {
