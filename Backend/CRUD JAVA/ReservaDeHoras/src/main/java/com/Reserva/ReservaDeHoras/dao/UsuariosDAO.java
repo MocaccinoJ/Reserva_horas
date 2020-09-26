@@ -73,8 +73,8 @@ public class UsuariosDAO {
         ps.setString(2,u.getCorreo());
         ps.setString(3,u.getContrasenha());
         ps.executeUpdate();
-        new EmailDAO().enviarConGMail(u.getCorreo(), "Bienvenido","¡Felicidades!"  +
-                " Te has registrado con éxito, te damos la bienvenida a KeepHealt ");
+        new EmailDAO().enviarConGMail(u.getCorreo(), "Bienvenido", "¡Felicidades! (Sr./a) "
+                + u.getNombre() + " Te has registrado con éxito, te damos la bienvenida a KeepHealt ");
     }
 
     //METODO PARA ACTUALIZAR/EDITAR UN UDUARIO
