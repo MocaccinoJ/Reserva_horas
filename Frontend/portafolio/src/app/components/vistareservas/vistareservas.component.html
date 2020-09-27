@@ -2,16 +2,23 @@
     <a class="navbar-brand" href="#">
       <img width="250" height="60" alt="Logo Portafolio" src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"/></a>
     <span class="example-spacer"></span>
-    <a style="margin-left: 60%">
-      <h3 style="color: rgb(67, 153, 252)">¡Bienvenido Administrador!</h3>
+
+    <span class="example-spacer"></span>
+    <a style="margin-left: 70%">
+      <button mat-stroked-button color="primary" routerLink="/admin">
+        Volver
+      </button>
     </a>
   </nav>
 
-
+  <a style="text-align: center;">
+        
+    <h3 style="color: rgb(35, 122, 223);">¡Bienvenido Administrador!</h3>
+  </a>
 <!-- TABLA PARA QUE LOS ADMINISTRADORES VEAN LA RESERVA (METODO DE CONFIRMACION DE RESERVA NO FUNCIONANDO)-->
 
   <div style="width: auto; margin: 1em auto;" class="mat-elevation-z2">
-    <h2 style="color: whitesmoke;">Usuarios de Keephealth</h2>
+    <h2 style="color: rgb(73, 73, 73);">Reservas de Keephealth</h2>
     <mat-table [dataSource]="reserva">
         <ng-container matColumnDef="id">
             <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>

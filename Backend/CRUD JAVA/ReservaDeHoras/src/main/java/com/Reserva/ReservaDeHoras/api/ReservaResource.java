@@ -2,9 +2,11 @@ package com.Reserva.ReservaDeHoras.api;
 
 import com.Reserva.ReservaDeHoras.dao.ReservaDAO;
 import com.Reserva.ReservaDeHoras.dao.UsuariosDAO;
+import com.Reserva.ReservaDeHoras.dao.ValidarFechaDAO;
 import com.Reserva.ReservaDeHoras.dto.reserva;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
@@ -25,7 +27,11 @@ public class ReservaResource {
     // <------------------------OJO CON ESTA CONSULTA------------------------>!!!
     @RequestMapping(method = RequestMethod.POST, value = "/reserva/agregar/")
     public void addNewReserva(@RequestBody reserva r) throws SQLException {
-        new ReservaDAO().anadirReserva(r);
+        if (new ValidarFechaDAO().validarReservas(r.getFecha(),r.getHora())){
+            new ReservaDAO().anadirReserva(r);
+        }else {
+            System.out.println("hora tomada");
+        }
     }
     //METODO PARA EDITAR UNA RESERVA EXISTENTE
     // <------------------------OJO CON ESTA CONSULTA------------------------>!!!
@@ -40,11 +46,6 @@ public class ReservaResource {
     public void borrarReserva (@PathVariable ("id") int id) throws SQLException {
         new ReservaDAO().borrarReserva(id);
     }
-
-
-
-
-
     //METODO PARA OBTENER TODAS LAS RESERVAS
    @RequestMapping(method = RequestMethod.GET, value = "/reserva/todos/")
     public List <reserva> getReservas() throws SQLException {
