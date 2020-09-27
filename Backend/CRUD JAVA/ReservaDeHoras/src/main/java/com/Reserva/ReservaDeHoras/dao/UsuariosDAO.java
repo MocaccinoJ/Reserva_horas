@@ -142,9 +142,28 @@ public class UsuariosDAO {
         String sql = "SELECT * FROM usuarios WHERE id = ?";
         return obtenerResultadosNum(sql,id);
     }
-}
-/*    public List<usuarios> obtenerUsuarioPorNombre(String nombre) throws SQLException{
-    String sql = "SELECT id, nombre, correo, contrasenha FROM usuarios WHERE nombre like ?";
-    return obtenerResultados(sql, nombre);
+
+
+    //METODO PARA RECUPERAR LA CONTRASEÑA
+
+    public List<usuarios> recuperarContra (String correo) throws SQLException {
+            String sql = "SELECT * FROM usuarios WHERE correo = ?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1,correo);
+            ResultSet rs = ps.executeQuery();
+            List<usuarios> usuario = new LinkedList<>();
+            while (rs.next()) {
+                usuarios u = new usuarios(
+                        rs.getInt("id"),
+                        rs.getString("nombre"),
+                        rs.getString("correo"),
+                        rs.getString("contrasenha")
+                );
+                usuario.add(u);
+                new EmailDAO().enviarConGMail(u.getCorreo(), "¡Contraseña!", "(Sr./a) "
+                        + u.getNombre() + "Tu contraseña es "+ u.getContrasenha()+ " ¡Por favor! No la compartas con nadie " +
+                        "y te recordamos guardarla en un lugar seguro. ");
+
+            } return usuario;
     }
-*/
+}

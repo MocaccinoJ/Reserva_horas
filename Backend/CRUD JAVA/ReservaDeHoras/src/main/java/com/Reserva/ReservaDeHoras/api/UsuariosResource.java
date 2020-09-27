@@ -55,4 +55,11 @@ public class UsuariosResource {
     public usuarios loginUsuario(@RequestBody usuarios user) throws Exception {
         return UsuariosDAO.loginUsuario(user);
     }
+    //METODO PARA RECUPERAR LA CONTRASEÑA
+    @RequestMapping(method = RequestMethod.GET, value = "/usuarios/contraseña/{correo}")
+    public List <usuarios> getUsuariosPorCorreoLike (@PathVariable ("correo") String correo)
+        throws SQLException {
+    List<usuarios> usuario = new UsuariosDAO().recuperarContra(correo);
+    return usuario;
+    }
 }
