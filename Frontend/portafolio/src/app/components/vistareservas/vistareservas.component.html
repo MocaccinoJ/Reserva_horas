@@ -10,13 +10,15 @@
       </button>
     </a>
   </nav>
-
+<br><br>
   <a style="text-align: center;">
         
     <h3 style="color: rgb(35, 122, 223);">¡Bienvenido Administrador!</h3>
   </a>
+  <br>
+  
 <!-- TABLA PARA QUE LOS ADMINISTRADORES VEAN LA RESERVA (METODO DE CONFIRMACION DE RESERVA NO FUNCIONANDO)-->
-
+<div class="container">
   <div style="width: auto; margin: 1em auto;" class="mat-elevation-z2">
     <h2 style="color: rgb(73, 73, 73);">Reservas de Keephealth</h2>
     <mat-table [dataSource]="reserva">
@@ -62,4 +64,5 @@
         <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
         <mat-row *matRowDef="let myRowData; columns: columnas"></mat-row>
     </mat-table>
+</div>
 </div>

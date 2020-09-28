@@ -166,4 +166,12 @@ public class UsuariosDAO {
 
             } return usuario;
     }
+
+    public void eliminarUsuarioC(String correo) throws SQLException{
+        String sql = "DELETE FROM usuarios WHERE correo = ?";
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ps.setString(1, correo);
+        ps.executeUpdate();
+
+    }
 }

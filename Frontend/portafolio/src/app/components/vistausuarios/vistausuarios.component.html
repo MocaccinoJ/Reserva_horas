@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img width="250" height="60" alt="Logo Portafolio" src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"/></a>
+    <span class="example-spacer"></span>
+
+    <span class="example-spacer"></span>
+    <a style="margin-left: 70%">
+      <button mat-stroked-button color="primary" routerLink="/admin">
+        Volver
+      </button>
+    </a>
+  </nav>
+
+  
+<div class="container">
+<div style="width: auto; margin: 1em auto;" class="mat-elevation-z2">
+    <h2 style="color: rgb(73, 73, 73);">Usuarios de Keephealth</h2>
+    <mat-table [dataSource]="usuario">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let usuario"> {{usuario.id}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="nombre">
+            <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+            <mat-cell *matCellDef="let usuario"> {{usuario.nombre}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="correo">
+            <mat-header-cell *matHeaderCellDef> Correo </mat-header-cell>
+            <mat-cell *matCellDef="let usuario"> {{usuario.correo}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="boton">
+            <mat-header-cell *matHeaderCellDef> Eliminar </mat-header-cell>
+            <mat-cell *matCellDef="let usuario; index as i">
+                <button mat-button (click)="eliminar(i)" color="primary"> Eliminar </button>
+            </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+        <mat-row *matRowDef="let myRowData; columns: columnas"></mat-row>
+    </mat-table>
+</div>
+</div>
+

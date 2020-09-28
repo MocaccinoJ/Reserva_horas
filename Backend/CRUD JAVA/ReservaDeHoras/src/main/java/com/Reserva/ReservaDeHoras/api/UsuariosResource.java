@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/api")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class UsuariosResource {
-//METODO PARA OBTENER A LOS USUARIOS DESDE LA DATABASE
+    //METODO PARA OBTENER A LOS USUARIOS DESDE LA DATABASE
 
     @RequestMapping(method = RequestMethod.GET, value = "/usuarios/nombre/{nombre}")
     public List<usuarios> getUsuariosByNombreLike (@PathVariable("nombre") String nombre)
@@ -62,4 +62,16 @@ public class UsuariosResource {
     List<usuarios> usuario = new UsuariosDAO().recuperarContra(correo);
     return usuario;
     }
+    //METODO PARA ELIMINAR UN USUARIO A TRAVÉS DE UN CORREO
+    @RequestMapping(method = RequestMethod.DELETE, value = "/usuarios/eliminarPorCorreo/{correo}")
+    public void borrarUsuarioCorreo (@PathVariable("correo") String correo) throws SQLException{
+        new UsuariosDAO().eliminarUsuarioC(correo);
+    }
+
+    /*
+        @RequestMapping(method = RequestMethod.DELETE, value = "/farmacias/eliminar/{ubicacion}")
+    public void borrarFarmacia (@PathVariable String ubicacion) throws SQLException {
+        new FarmaciasDAO().borrarFarmacia(ubicacion);
+    }
+    */
 }

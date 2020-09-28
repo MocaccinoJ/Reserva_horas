@@ -12,7 +12,7 @@ export class UsuarioService {
   private usuarioURL = 'http://localhost:8080/api/usuarios/'; // URL de la API
 
   obtenerUsuarios(): Observable<Usuario[]>{
-    return this.http.get<Usuario[]>(this.usuarioURL+"nombre/")
+    return this.http.get<Usuario[]>(this.usuarioURL+"todos/")
   }
   obtenerUsuariosPorId(id): Observable<Usuario[]>{
     return this.http.get<Usuario[]>(this.usuarioURL+"id/"+id)
@@ -26,7 +26,7 @@ export class UsuarioService {
   }
 
   borrarUsuario(correo: String): Observable<{}>{
-    return this.http.delete(`${this.usuarioURL}eliminar/${correo}`, this.httpOptions);
+    return this.http.delete(`${this.usuarioURL}eliminarPorCorreo/${correo}`, this.httpOptions);
   }
 
 

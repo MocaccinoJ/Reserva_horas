@@ -24,7 +24,6 @@ public class ReservaResource {
         return res;
     }
     //METODO PARA AGREGAR UNA NUEVA RESERVA
-    // <------------------------OJO CON ESTA CONSULTA------------------------>!!!
     @RequestMapping(method = RequestMethod.POST, value = "/reserva/agregar/")
     public void addNewReserva(@RequestBody reserva r) throws SQLException {
         if (new ValidarFechaDAO().validarReservas(r.getFecha(),r.getHora())){
@@ -34,7 +33,6 @@ public class ReservaResource {
         }
     }
     //METODO PARA EDITAR UNA RESERVA EXISTENTE
-    // <------------------------OJO CON ESTA CONSULTA------------------------>!!!
     @RequestMapping(method = RequestMethod.PUT, value = "/reserva/editar/{id}")
     public void updateReserva (@PathVariable("id") int a,
                                @RequestBody reserva r) throws SQLException {

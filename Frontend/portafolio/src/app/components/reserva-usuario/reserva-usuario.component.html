@@ -24,6 +24,7 @@
   <br><br>
 <hr>
 
+<div class="container">
 <mat-table [dataSource]="dataSource">
     <ng-container *ngFor="let column of columnasMostrar" matColumnDef="{{column.name}}">
     <mat-header-cell *matHeaderCellDef> {{column.title}} </mat-header-cell>
@@ -39,3 +40,4 @@
         </mat-cell>
       </ng-container>
 </mat-table>
+</div>

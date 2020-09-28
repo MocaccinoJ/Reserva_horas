@@ -40,7 +40,7 @@ public class AdministradoresResource {
     //METODO PARA ELIMINAR UN ADMIND
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/administradores/eliminar/{id}")
-    public void borrarAdministradorbyId (@PathVariable int id) throws SQLException {
+    public void borrarAdministradorbyId (@PathVariable ("id") int id) throws SQLException {
         new AdministradoresDAO().borrarAdministrador(id);
     }
     //METODO PARA OBTENER A TODOS LOS USUARIOS
