@@ -10,6 +10,7 @@ import { VistausuariosComponent } from '../app/components/vistausuarios/vistausu
 import { LoginAdminComponent } from 'src/app/components/login-admin/login-admin.component';
 import { ReservaUsuarioComponent } from 'src/app/components/reserva-usuario/reserva-usuario.component';
 
+
 const routes: Routes = [
   
   {path: '', component: HomeComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'vistausuarios', component: VistausuariosComponent},
   {path: 'login-admin', component: LoginAdminComponent},
   {path: 'reservausuario', component: ReservaUsuarioComponent},
+
  
 
 ];

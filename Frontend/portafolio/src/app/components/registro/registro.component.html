@@ -1,3 +1,42 @@
+ <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img width="250" height="60" alt="Logo Portafolio" src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"
+  /></a>
+  <span class="example-spacer"></span>
+  <a style="margin-left: 70%">
+    <button aria-label="Reserva tu hora" title="Reserva tu hora" routerLink="/sesion" class="btn btn-outline-primary my-2 my-sm-0">
+      Iniciar Sesión
+    </button>
+  </a>
+</nav>
+
+<div style="margin: 2em auto; padding: 2em; width: 50%;background: rgb(7, 111, 247); color: white;" class="mat-elevation-z8" >
+  <h3>Regístrate</h3>
+  <h4 style="color: rgb(255, 255, 255);">Crea tu cuenta y administra tu tiempo mejor, ¡juntos podemos pelear contra el virus!</h4>
+  <form >
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label style="color: rgb(255, 255, 255);">Nombre</mat-label>
+          <input matInput class="inputText" #nombre required placeholder="Nombre completo" [(ngModel)]="usuario.nombre" name = 'usuario.nombre'>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label style="color: rgb(255, 255, 255);">Correo</mat-label>
+          <input matInput #correo required placeholder="example@email.com" class="inputText" [(ngModel)]="usuario.correo" name = 'usuario.correo'>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label style="color: rgb(255, 255, 255);">Contraseña</mat-label>
+          <input matInput type="password" #contrasenha required class="inputText" [(ngModel)]="usuario.contrasenha" name = 'usuario.contrasenha'>
+          <mat-hint style="color: rgb(255, 255, 255);">Ingresa una contraseña con al menos una letra y un número, y que tenga un largo mínimo de 4 caracteres</mat-hint>
+      </mat-form-field>
+   
+      <button type="button" class="btn btn-warning" style="margin-left: 35%; color: white;" (click)="validarDatos()"> Enviar</button>
+      <button mat-raised-button type="reset" color="warn" style="margin-left: 1em;">Limpiar datos</button>
+  </form>
+</div> -->
+
+
+
+
+<!-- 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
       <img width="250" height="60" alt="Logo Portafolio" src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"
@@ -31,4 +70,39 @@
         <button mat-raised-button type="button"color="primary" style="margin: 1em;" (click)="validarDatos()"> Enviar</button>
         <button mat-raised-button type="reset" color="secondary" style="margin-left: 1em;">Limpiar datos</button>
     </form>
+</div>  -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img width="200" height="45" alt="Logo Portafolio" src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"
+  /></a>
+  <span class="example-spacer"></span>
+  <a style="margin-left: 74%">
+    <button aria-label="Reserva tu hora" title="Reserva tu hora" routerLink="/sesion" class="btn btn-primary my-2 my-sm-0">
+      Iniciar Sesión
+    </button>
+  </a>
+</nav>
+
+<div style="margin: 2em auto; padding: 2em; width: 50%" class="mat-elevation-z8">
+  <h3>Regístrate</h3>
+  <p>Crea tu cuenta y administra tu tiempo mejor, ¡juntos podemos luchar contra el virus!</p>
+  <form>
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Nombre</mat-label>
+          <input matInput class="inputText" #nombre required placeholder="Nombre completo" [(ngModel)]="usuario.nombre" name = 'usuario.nombre'>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label>Correo</mat-label>
+          <input matInput #correo required placeholder="example@email.com" class="inputText" [(ngModel)]="usuario.correo" name = 'usuario.correo'>
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="primary" style="width: 100%;">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" #contrasenha required class="inputText" [(ngModel)]="usuario.contrasenha" name = 'usuario.contrasenha'>
+          <mat-hint>Ingresa una contraseña con al menos una letra y un número, y que tenga un largo mínimo de 4 caracteres</mat-hint>
+      </mat-form-field>
+   
+      <button mat-raised-button type="button"color="primary" style="margin: 1em; margin-left: 15em;" (click)="validarDatos()"> Enviar</button>
+      <button mat-raised-button type="reset" color="warn" style="margin-left: 1em;">Limpiar datos</button>
+  </form>
 </div>

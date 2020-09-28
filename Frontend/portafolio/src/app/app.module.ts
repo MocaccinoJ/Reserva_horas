@@ -21,6 +21,7 @@ import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReservaUsuarioComponent } from './components/reserva-usuario/reserva-usuario.component';
+import { RcontrasenhaComponent } from './components/rcontrasenha/rcontrasenha.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ReservaUsuarioComponent } from './components/reserva-usuario/reserva-us
     VistausuariosComponent,
     LoginAdminComponent,
     ReservaUsuarioComponent,
+    RcontrasenhaComponent,
 
   ],
   imports: [

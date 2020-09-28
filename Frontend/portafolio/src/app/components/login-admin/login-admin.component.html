@@ -1,40 +1,104 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-      <img
-        width="250"
-        height="60"
-        alt="Logo Portafolio"
-        src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"
-    /></a>
-    <span class="example-spacer"></span>
-  </nav>
+  <a class="navbar-brand" href="#">
+    <img
+      width="200"
+      height="45"
+      alt="Logo Portafolio"
+      src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"
+  /></a>
+  <span class="example-spacer"></span>
+</nav>
 
-  <section class="mt-5 login-user">
-    <div class="container">
-      <div class="row">
-        <div class="col-6 mx-auto  mb-5 formulario card">
-          <form [formGroup]="form" (ngSubmit)="onSubmit()">
-            <h1 class="mx-auto text-center">Iniciar Sesión</h1>
-            <div class="form-group">
-              <label for="nombreUser">Correo</label>
-              <input type="text" class="form-control" id="nombreUser" formControlName='username'
-                placeholder="Ingrese Correo" #correo>
-            </div>
-            <div class="form-group">
-              <label for="contrasenhaUser">Contraseña</label>
-              <input type="password" class="form-control" id="contrasenhaUser" #contrasena
-                placeholder="Ingrese Contraseña" formControlName='password'>
-            </div>
-  
-            <button class="btn btn-lg Btn-login  btn-block" value="Acceder">Iniciar Sesión</button>
-            <!-- <button class="btn btn-outline-primary my-2 my-sm-0" routerLink="/login-admin"> Administrador</button> -->
-            <div class="form-group text-center mt-5">
-              <p>¿No tienes una cuenta? Registrate <a routerLink="/registro">aquí</a></p>
-              <p>Recupera tu contraseña <a routerLink="/recuperarContrasena"> aquí</a></p>
-              <p>Bienvenido Administrador</p>
-            </div>
-          </form>
-        </div>
+<section class="mt-5 login-user">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 mx-auto  mb-5 formulario card">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <h1 class="mx-auto text-center" style="margin-top: 5%;">Iniciar Sesión</h1>
+          <div class="form-group">
+            <label for="nombreUser">Correo</label>
+            <input type="text" class="form-control" id="nombreUser" formControlName='username'
+              placeholder="Ingrese Correo" #correo>
+          </div>
+          <div class="form-group">
+            <label for="contrasenhaUser">Contraseña</label>
+            <input type="password" class="form-control" id="contrasenhaUser" #contrasena
+              placeholder="Ingrese Contraseña" formControlName='password'>
+          </div>
+
+          <button class="btn btn-primary Btn-login  btn-block" value="Acceder">Iniciar Sesión</button>
+          <!-- <button class="btn btn-outline-primary my-2 my-sm-0" routerLink="/login-admin"> Administrador</button> -->
+          <div class="form-group text-center mt-5">
+            <p>¿No tienes una cuenta? Registrate <a routerLink="/registro">aquí</a></p>
+            <p>Recupera tu contraseña <a routerLink="/recuperarContrasena"> aquí</a></p>
+            <p>Bienvenido Administrador</p>
+          </div>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img
+      width="250"
+      height="60"
+      alt="Logo Portafolio"
+      src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"
+  /></a>
+<h3 style="margin-left: 50%; color: rgb(115, 139, 247);">¡Bienvenido a keephealth!</h3>
+</nav>
+<br>
+<section class="container-fluid mb-5" >
+  <div class="row justify-content-between">
+      <div id="beneficios" class="col-12 col-md-2 col-lg-3 order-2 order-md-1 mt-3 mt-md-0">
+      </div>
+      <div id="tabs-loginregistro" class="col-12 col-md-6 col-lg-3 order-1 order-md-2" >
+
+          <ul class="nav nav-pills w-100">
+              <li class="nav-item w-50">
+                <a id="naviniciasesion" class="nav-link text-center active "> ADMINISTRADOR</a>
+              </li>
+              <li class="nav-item w-50">
+                  <a id="naviniciasesion" class="nav-link text-center "  routerLink="/sesion">USUARIO</a>
+              </li>
+          </ul>
+          <div id="cardlogin" class="card p-4 m-0  border-0" style="background: rgb(7, 111, 247); color: white;">
+              <form id="frm_access" class="form" role="form" action="/omt/users/alemana/access/" method="post">
+                  <div class="form-group">
+                    <label for="nombreUser">Correo</label>
+                    <input type="text" class="form-control" id="nombreUser" formControlName='username'
+                      placeholder="Ingrese Correo" #correo>
+                  </div>
+                  <div class="form-group">
+                    <label for="contrasenhaUser">Contraseña</label>
+                    <input type="password" class="form-control" id="contrasenhaUser" #contrasena
+                      placeholder="Ingrese Contraseña" formControlName='password'>
+                  </div>
+                  <div class="form-group mb-2">
+                    <button type="button" class="btn btn-warning Btn-login  btn-block" value="Acceder">Iniciar Sesión</button>
+                   
+                    
+                  </div>
+                  <div class="form-group text-center mt-5">
+                    <p>¿No tienes una cuenta? Registrate <a routerLink="/registro">aquí</a></p>
+                    <p>Recupera tu contraseña <a routerLink="/rcontrasenha"> aquí</a></p>
+                    <p >¿Eres Usuario? <a routerLink="/sesion"> aquí</a></p>
+                  </div>
+                 </form>
+          </div>
+          
+      </div>
+      <div class="col-12 col-md-2 col-lg-3 order-3"></div>
+  </div>
+</section> -->
