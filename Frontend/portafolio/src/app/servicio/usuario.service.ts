@@ -36,4 +36,8 @@ export class UsuarioService {
   loginUsuario(usuario: Usuario) {
     return this.http.post<Usuario>(this.usuarioURL+"login/", usuario, this.httpOptions)
   }
+
+  recuperarContrasenha(correo: String): Observable<{}>{
+    return this.http.get(`${this.usuarioURL}contraseña/${correo}`,this.httpOptions)
+  }
 }

@@ -130,3 +130,5 @@ INSERT INTO farmacias ([franquicia],[ubicacion],[comuna]) VALUES ('Salcobrand', 
 SELECT * FROM reserva
 SELECT * FROM farmacias
 
+
+SELECT * FROM reserva WHERE fecha = '2020-08-26' AND hora= '21:00' 

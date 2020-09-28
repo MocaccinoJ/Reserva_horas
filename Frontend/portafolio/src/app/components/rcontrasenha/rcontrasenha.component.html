@@ -1,1 +1,35 @@
-<p>rcontrasenha works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img
+        width="200"
+        height="45"
+        alt="Logo Portafolio"
+        src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"
+    /></a>
+    <span class="example-spacer"></span>
+  </nav>
+  
+  <section class="mt-5 login-user">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 mx-auto  mb-5 formulario card">
+          <form>
+            <h3 class="mx-auto text-center" style="margin-top: 5%;">Recuperar Contraseña</h3>
+            <div class="form-group">
+              <label for="nombreUser"></label>
+              <input type="text" class="form-control" id="nombreUser" formControlName='username'
+                placeholder="Ingrese Correo" #correo>
+            </div>
+            
+            <button class="btn btn-primary Btn-login  btn-block" (click)="recuperarContrasenha(correo.value)" routerLink="/home">Enviar Contraseña</button>
+            <!-- <button class="btn btn-outline-primary my-2 my-sm-0" routerLink="/login-admin"> Administrador</button> -->
+            <div class="form-group text-center mt-5">
+              <p>Te enviarémos un correo con tu contraseña</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
