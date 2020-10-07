@@ -37,38 +37,3 @@ export class VistareservasComponent implements OnInit {
     this.servicio_r.obtenerReservas().subscribe(reserva => this.reserva =reserva);
     }
 }
-/*
-   obtenerUsuarios() {
-     this.usuarioService.obtenerUsuarios()
-       .subscribe(usuarios => this.usuario = usuarios);
-   }
-
-  usuario: Usuario[]=[];
-
-  ngOnInit(): void {
-    this.usuarioService.obtenerUsuarios().subscribe(usuario => this.usuario = usuario)
-  }
-
-  
-  columnas = ['nombre', 'correo', 'contrasenha', 'binder', 'boton']
-
-
-   eliminar(i){
-     const email = this.usuario[i].correo
-     this.usuarioService.borrarUsuario(email).subscribe(_=>this.obtenerUsuarios());
-     this.usuarioService.borrarUsuario(email).subscribe();
-     console.log(this.usuario);
-     console.log(email);
-   }
- 
-  
-   obtenerUsuarios() {
-     this.usuarioService.obtenerUsuarios()
-      .subscribe(usuarios => this.usuario = usuarios);
-   }
-
-   update(){
-     this.usuarioService.actualizarUsuario(this.usuarioUnico, this.usuarioUnico.correo).subscribe(_=>this.obtenerUsuarios());
-     this.usuarioService.actualizarUsuario(this.usuarioUnico, this.usuarioUnico.correo).subscribe();
-   }
- } */

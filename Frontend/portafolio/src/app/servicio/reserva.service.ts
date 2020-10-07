@@ -46,12 +46,3 @@ export class ReservaService {
   }
 
 }
-
-/*
-  borrarUsuario(correo: String): Observable<{}>{
-    return this.http.delete(`${this.usuarioURL}eliminar/${correo}`, this.httpOptions);
-  }
-  */ 
-   // confirmarReserva( correo_a: String): Observable<{}>{
-  //   return this.http.put(`${this.reservaURL}confirmar/${correo_a}`, this.httpOptions);
-  //}

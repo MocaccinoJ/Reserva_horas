@@ -23,8 +23,3 @@ export class AdminComponent implements OnInit {
     this.router.navigate(['/'])
   }
 }
-/*
-  obtenerDatosUsuario(){
-  const id = JSON.parse(localStorage.getItem('usuario')).id
-  const nombre = JSON.parse(localStorage.getItem('usuario')).nombre
-  console.log(nombre, 'ESTE ES EL NOMBRE')*/
