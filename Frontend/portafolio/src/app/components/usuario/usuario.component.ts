@@ -72,70 +72,22 @@ export class UsuarioComponent implements OnInit {
   crearReserva1(servicio, ubicacion_f, fecha, hora, id_u){
     
     const id = JSON.parse(localStorage.getItem('usuario')).id
+  
 
      this.servicio_r.agregarReserva({servicio, ubicacion_f, fecha, hora, id_u} as Reserva).subscribe();{
-     this.router.navigate(['/usuario'])
+    alert("¡Reserva exitosa!")
+    this.router.navigate(['/usuario'])
      }
     console.log(id)
+ 
   }
-obtenerDatosUsuario(){
+
+  obtenerDatosUsuario(){
   const id = JSON.parse(localStorage.getItem('usuario')).id
+  const nombre = JSON.parse(localStorage.getItem('usuario')).nombre
+  console.log(nombre, 'ESTE ES EL NOMBRE')
+
   console.log(id,'ESTE ES EL ID')
   this.servicio_u.obtenerUsuariosPorId(id).subscribe(usuario => this.usuario = usuario[0])
-
+  }
 }
-  // confirmar(reserva){
-  //   const id = JSON.parse(localStorage.getItem('admin')).id
-  //   this.servicio_r.confirmarReserva(reserva, id).subscribe(_=>this.obtenerReservas());
-   
-  //   console.log(id);
-  // }
-
-
-  
-  //  METODO PARA AGREGAR UNA RESERVA(PENDIENTE)
-  // agregarReserva(reserva: Reserva): Observable<Reserva>{
-  //   return this.http.post<Reserva>(this.reservaURL+"agregar/", reserva, this.httpOptions)
-  // }
-
-
-
-          //Obtener Dato con desde el LocalStorage
-        // confirmar(reserva){
-        //   const id = JSON.parse(localStorage.getItem('admin')).id
-        //   this.servicio_r.confirmarReserva(reserva, id).subscribe(_=>this.obtenerReservas());
-         
-        //   console.log(id);
-      
-        // }
-}
-/*
-
-    if(this.service.agregarUsuario(this.usuario).subscribe()){
-        alert("Registro exitoso"); 
-        this.router.navigate(['']);
-        */
-
-
-
-        //Obtener Dato con desde el LocalStorage
-        // confirmar(reserva){
-        //   const id = JSON.parse(localStorage.getItem('admin')).id
-        //   this.servicio_r.confirmarReserva(reserva, id).subscribe(_=>this.obtenerReservas());
-         
-        //   console.log(id);
-      
-        // }
-
-
-  //  METODO PARA AGREGAR UNA RESERVA(PENDIENTE)
-  // agregarReserva(reserva: Reserva): Observable<Reserva>{
-  //   return this.http.post<Reserva>(this.reservaURL+"agregar/", reserva, this.httpOptions)
-  // }
-
-
-  // METODO PARA CONFIRMAR UNA RESERVA
-  // confirmarReserva( reserva: Reserva, i ){
-  //   const url = 'confirmar/'
-  //   return this.http.put(`${this.reservaURL}confirmar/${i}`  ,reserva, this.httpOptions);
-  // }

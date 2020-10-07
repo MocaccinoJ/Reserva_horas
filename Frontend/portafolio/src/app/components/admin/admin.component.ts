@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/servicio/auth.service';
+import { Admin } from 'src/app/interfaces/admin';
 
 @Component({
   selector: 'app-admin',
@@ -13,6 +14,8 @@ export class AdminComponent implements OnInit {
     private authService: AuthService) { }
 
   ngOnInit(): void {
+    const  nombre = JSON.parse(localStorage.getItem('admin')).nombre
+    console.log(nombre, 'ESTE ES EL NOMBRE')
   }
 
   logout(){
@@ -20,3 +23,8 @@ export class AdminComponent implements OnInit {
     this.router.navigate(['/'])
   }
 }
+/*
+  obtenerDatosUsuario(){
+  const id = JSON.parse(localStorage.getItem('usuario')).id
+  const nombre = JSON.parse(localStorage.getItem('usuario')).nombre
+  console.log(nombre, 'ESTE ES EL NOMBRE')*/

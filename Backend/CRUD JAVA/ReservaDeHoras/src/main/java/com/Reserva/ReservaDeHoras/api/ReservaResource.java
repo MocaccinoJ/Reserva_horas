@@ -4,16 +4,22 @@ import com.Reserva.ReservaDeHoras.dao.ReservaDAO;
 import com.Reserva.ReservaDeHoras.dao.UsuariosDAO;
 import com.Reserva.ReservaDeHoras.dao.ValidarFechaDAO;
 import com.Reserva.ReservaDeHoras.dto.reserva;
+import org.springframework.beans.TypeMismatchException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Date;
+
+
+
 import java.sql.SQLException;
-import java.util.LinkedList;
+
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins = "*", maxAge = 3600)
+
 public class ReservaResource {
 
     //METODO PARA OBTENER LAS RESERVAS
@@ -29,7 +35,8 @@ public class ReservaResource {
         if (new ValidarFechaDAO().validarReservas(r.getFecha(),r.getHora())){
             new ReservaDAO().anadirReserva(r);
         }else {
-            System.out.println("hora tomada");
+            System.out.println("HORA TOMADA");
+
         }
     }
     //METODO PARA EDITAR UNA RESERVA EXISTENTE

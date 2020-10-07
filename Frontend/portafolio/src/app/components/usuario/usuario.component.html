@@ -4,7 +4,7 @@
       width="250"
       height="60"
       alt="Logo Portafolio"
-      src="https://www.keephealth.de/wp-content/uploads/2018/12/KH_Logo.png"
+      src="https://i.ibb.co/nzXgpyY/keephealth-removebg-preview-1.png"
   /></a>
   <!-- BOTON DE CERRAR LA SESION -->
   <span class="example-spacer"></span>
@@ -26,9 +26,7 @@
 <br>
 
 <!-- BIENVENIDA -->
-  <h3 style="color: rgb(67, 153, 252); text-align: center;">¡Bienvenido!</h3>
-
-
+  <h3 style="color: rgb(67, 153, 252); text-align: center;">¡Bienvenido {{usuario.nombre}}! </h3>
 <!-- COMIENZO DEL FORMULARIO -->
 <body
   class="mat-elevation-z8 sesion text-center"
@@ -40,18 +38,10 @@
 
   <hr>
   
-  <!-- <mat-form-field matInput #servicio name='reserva.servicio' appearance="fill" style="margin-right: 10%; width:45%;">
-    
-   <mat-label matInput #servicio name='reserva.servicio'>Servicio</mat-label> 
-    <mat-select>
-      <mat-option value="Venta">Venta</mat-option>
-      <mat-option value="Post Venta">Post Venta</mat-option>
-    </mat-select>
-  </mat-form-field> -->
 <div>
     <label class="" for="servicio"><h5>Servicio</h5></label>
     <select  class="custom-select" name="servicio" #servicio>
-        <option disabled>Ubicacion:</option>
+        <option disabled>Servicio:</option>
         <option value="Venta">Venta</option>
         <option value="Post Venta">Post Venta</option>
     </select>
@@ -76,25 +66,6 @@
   </select>
 </div>
 
-  <!-- <mat-form-field appearance="fill" style="float: right; width: 45%;" #ubicacion_f name='reserva.ubicacion_f'>
-    <mat-label #ubicacion_f name='reserva.ubicacion_f'>Farmacia</mat-label> 
-   
-      <mat-select>
-        
-        <mat-option value="Cruz Verde San Bernardo">Cruz Verde San Bernardo</mat-option>
-        <mat-option value="Cruz Verde Ñuñoa">Cruz Verde Ñuñoa</mat-option>
-        <mat-option value="Cruz Verde Maipu">Cruz Verde Maipu</mat-option>
-        <mat-option value="Ahumada San Bernardo">Ahumada San Bernardo</mat-option>
-        <mat-option value="Ahumada Ñuñoa">Ahumada Ñuñoa</mat-option>
-        <mat-option value="Ahumada Maipu">Ahumada Maipu</mat-option>
-        <mat-option value="Salcobrand San Bernardo">Salcobrand San Bernardo</mat-option>
-        <mat-option value="Salcobrand Ñuñoa">Salcobrand Ñuñoa</mat-option>
-      
-      </mat-select>
-  </mat-form-field>  -->
-
-
-
 <hr>
 
 
@@ -103,8 +74,8 @@
     <label for="start">Selecciona la Fecha y la Hora:</label>
   
     <input type="date" id="start" matInput #fecha name='reserva.fecha'
-         value="2018-07-22"
-         min="2000-01-01" max="2030-01-01" style="margin-right: 10%; width:28%;">
+         value="2020-10-05"
+         min="2020-10-05" max="2030-01-01" style="margin-right: 10%; width:28%;">
 
          <!-- SELECCIONAR LA HORA  -->
 
@@ -128,6 +99,7 @@
     <option value="19:00">
     <option value="20:00">
     <option value="21:00">
+
   </datalist>
 
 </div>
@@ -138,62 +110,12 @@
   <input matInput #id_u class="inputText" [(ngModel)]="usuario.id" name = 'usuario.id'  disabled>
 </mat-form-field>
 
-
 <hr>
 
-
-  <button mat-raised-button color="primary" style="margin-left: 1em; margin-top: 2em" routerLink="/usuario" 
+  <button mat-raised-button color="warn" style="margin-left: 1em; margin-top: 2em" routerLink="/usuario" 
   (click)="crearReserva1(servicio.value, ubicacion_f.value, fecha.value, hora.value, id_u.value)">
     Reservar hora
   </button>
   <button mat-raised-button color="primary" style="margin-left: 1em; margin-top: 2em">
     Limpiar datos </button>
 </body>
-
-
-<!-- <div style="margin: 1em;">
-  <form>
-      <mat-form-field style="width: 100%;">
-          <mat-label>Nombre: </mat-label>
-          <input matInput #nombre>
-      </mat-form-field>
-      <mat-form-field style="width: 100%;">
-          <mat-label>País: </mat-label>
-          <input matInput #pais>
-      </mat-form-field>
-      <mat-form-field style="width: 100%;">
-          <mat-label>Ciudad: </mat-label>
-          <input matInput #ciudad>
-      </mat-form-field>
-  </form>
-  <button mat-raised-button color="primary" 
-          (click)="guardarAeropuerto(nombre.value, pais.value, ciudad.value)">
-          Guardar
-  </button>
-  </div> -->
-
-
-
-
-<!-- <div style="margin: 2em auto; padding: 2em; width: 50%" class="mat-elevation-z8">
-  <h3>Regístrate</h3>
-  <p>Crea tu cuenta y administra tu tiempo mejor, ¡juntos podemos pelear contra el virus!</p>
-  <form>
-      <mat-form-field appearance="outline" style="width: 100%;">
-          <mat-label>Nombre</mat-label>
-          <input matInput class="inputText" #nombre required placeholder="Nombre completo" [(ngModel)]="usuario.nombre" name = 'usuario.nombre'>
-      </mat-form-field>
-      <mat-form-field appearance="outline" style="width: 100%;">
-          <mat-label>Correo</mat-label>
-          <input matInput #correo required placeholder="example@email.com" class="inputText" [(ngModel)]="usuario.correo" name = 'usuario.correo'>
-      </mat-form-field>
-      <mat-form-field appearance="outline" style="width: 100%;">
-          <mat-label>Contraseña</mat-label>
-          <input matInput type="password" #contrasenha required class="inputText" [(ngModel)]="usuario.contrasenha" name = 'usuario.contrasenha'>
-          <mat-hint>Ingresa una contraseña con al menos una letra y un número, y que tenga un largo mínimo de 4 caracteres</mat-hint>
-      </mat-form-field>
-   
-      <button mat-raised-button type="button"color="primary" style="margin: 1em;" (click)="validarDatos()"> Enviar</button>
-      <button mat-raised-button type="reset" color="secondary" style="margin-left: 1em;">Limpiar datos</button>
-  </form>
-</div> -->
